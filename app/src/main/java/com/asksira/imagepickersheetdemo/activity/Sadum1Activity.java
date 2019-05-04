@@ -296,16 +296,17 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
     }
 
     public void fsize(String hs, String ws) {
+
         btnstatus = true;
 
-        int h = Integer.parseInt(hs);
-        int w = Integer.parseInt(ws);
+        int h = Integer.parseInt(hs)*5;
+        int w = Integer.parseInt(ws)*5;
 
         //Relative layout untuk image template
         relativeimages = (RelativeLayout) findViewById(R.id.containertemplate);
 
-        relativeimages.getLayoutParams().height = (int) h * 6;
-        relativeimages.getLayoutParams().width = (int) w * 8;
+        relativeimages.getLayoutParams().height = (int) h;
+        relativeimages.getLayoutParams().width = (int) w ;
         RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) relativeimages.getLayoutParams();
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
 
