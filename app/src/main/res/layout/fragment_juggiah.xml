@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.JuggiahFragment"
+    android:padding="20dp"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:background="@color/white"
+    >
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:text="Juggiah" />
+
+    <TextView
+        android:id="@+id/tvexp"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Juggiah" />
+
+
+
+    <TextView
+        android:id="@+id/tvamount"
+        android:layout_below="@+id/tvexp"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumlah Jugiah" />
+
+
+    <EditText
+        android:id="@+id/edtamountJug"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvamount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="number"
+        android:hint="Amount"
+        />
+
+
+    <Button
+        android:id="@+id/btnpreview"
+        android:layout_below="@+id/edtamountJug"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preview" />
+
+    <LinearLayout
+        android:id="@+id/linearimgprev"
+        android:layout_below="@+id/btnpreview"
+        android:layout_width="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/linearimgprev"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        >
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:text="Batal" />
+
+        <Button
+            android:id="@+id/btnSelesaiJuggiah"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/green_300"
+            android:textColor="@color/white"
+            android:text="Selesai" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

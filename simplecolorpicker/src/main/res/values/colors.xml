@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- colors.xml for com.appstoremarketresearch.simplecolorpicker -->
+<resources>
+    <!--  Colors from https://www.google.com/design/spec/style/color.html -->
+    <color name="blue">#2196F3</color>
+    <color name="green">#4CAF50</color>
+    <color name="orange">#FF9800</color>
+    <color name="purple">#9C27B0</color>
+    <color name="red">#F44336</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="color_button_1">@color/red</color>
+    <color name="color_button_2">@color/orange</color>
+    <color name="color_button_3">@color/yellow</color>
+    <color name="color_button_4">@color/green</color>
+    <color name="color_button_5">@color/blue</color>
+    <color name="color_button_6">@color/purple</color>
+</resources>

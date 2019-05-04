@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MangiringActivity"
+    android:id="@+id/backgroundalltemp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relativeimage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgtemplate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/template_sadum_1"
+            />
+
+        <ImageView
+            android:id="@+id/imgtemplatetgh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/template_bm_2"
+            />
+
+
+    </RelativeLayout>
+
+
+    <!--BUTTON UNTUK CANCEL SAVE DLL-->
+    <RelativeLayout
+        android:id="@+id/topmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="1dp"
+        android:layout_alignParentLeft="true">
+
+        <ImageView
+            android:id="@+id/cancel_imgview"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            app:srcCompat="@drawable/ic_cross" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/undo_imgview"
+                android:layout_width="26dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="38dp"
+                app:srcCompat="@drawable/ic_reply" />
+
+            <ImageView
+                android:id="@+id/redo_imgview"
+                android:layout_width="26dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="36dp"
+                app:srcCompat="@drawable/ic_forward" />
+
+            <ImageView
+                android:id="@+id/save_imgview"
+                android:layout_width="19dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                app:srcCompat="@drawable/ic_check" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/btnforpattern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnjuggiah"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_vertical_line"
+            />
+
+        <Button
+            android:id="@+id/btnrowmotif"
+            android:background="@drawable/ic_horizontal_line"
+            android:layout_marginTop="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            />
+
+        <Button
+            android:id="@+id/btnselectmotif"
+            android:background="@drawable/ic_pattern_1"
+            android:layout_marginTop="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textsettem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ukuran Template"
+        android:layout_above="@+id/settem"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <Button
+        android:id="@+id/settem"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:text="Atur Template"
+        android:textColor="@color/black"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <FrameLayout
+        android:id="@+id/containerfragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerfragmentjuggiah"
+        android:layout_width="340dp"
+        android:layout_height="600dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        >
+    </FrameLayout>
+
+
+
+</RelativeLayout>

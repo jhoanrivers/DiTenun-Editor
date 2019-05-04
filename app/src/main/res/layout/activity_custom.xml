@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CustomActivity"
+    android:id="@+id/backgroundalltemp">
+
+
+    <RelativeLayout
+        android:id="@+id/containertemplate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+
+        <ImageView
+            android:id="@+id/img_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/sadum_template"
+            />
+
+
+
+        <ImageView
+            android:id="@+id/iv_image2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="106dp"
+            android:scaleType="matrix"
+            android:layout_weight="1" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/motif_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="207dp"
+        android:background="@drawable/ic_pattern" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutsize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/textsettem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ukuran Template"
+            android:layout_above="@+id/settem"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:id="@+id/btnsettem"
+            android:layout_below="@+id/textsettem"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:text="Atur Template"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+
+
+
+    <!--BUTTON UNTUK CANCEL SAVE DLL-->
+    <RelativeLayout
+        android:id="@+id/topbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="1dp"
+        android:layout_alignParentLeft="true">
+
+        <ImageView
+            android:id="@+id/cancel_imgview"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            app:srcCompat="@drawable/ic_cross" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/undo_imgview"
+                android:layout_width="26dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="38dp"
+                app:srcCompat="@drawable/ic_reply" />
+
+            <ImageView
+                android:id="@+id/redo_imgview"
+                android:layout_width="26dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="36dp"
+                app:srcCompat="@drawable/ic_forward" />
+
+            <ImageView
+                android:id="@+id/save_imgview"
+                android:layout_width="19dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                app:srcCompat="@drawable/ic_check" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/seekcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+
+        <SeekBar
+            android:id="@+id/huebar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="511"
+            android:progress="256"
+            android:background="@drawable/hue_bg"/>
+        <SeekBar
+            android:id="@+id/satbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="511"
+            android:progress="256"/>
+        <SeekBar
+            android:id="@+id/valbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="511"
+            android:progress="256"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/containersize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+
+
+</RelativeLayout>

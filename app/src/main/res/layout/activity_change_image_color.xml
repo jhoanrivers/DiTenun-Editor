@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ChangeImageColor">
+
+
+    <Button
+        android:id="@+id/loadimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Image 1" />
+
+    <TextView
+        android:id="@+id/sourceuri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/result"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:background="@android:color/background_dark"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/texthue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hue" />
+    <SeekBar
+        android:id="@+id/huebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="511"
+        android:progress="256"/>
+    <TextView
+        android:id="@+id/textsat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saturation" />
+    <SeekBar
+        android:id="@+id/satbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="511"
+        android:progress="256"/>
+    <TextView
+        android:id="@+id/textval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Value" />
+    <SeekBar
+        android:id="@+id/valbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="511"
+        android:progress="256"/>
+    <Button
+        android:id="@+id/resethsv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset HSV" />
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TableRow>
+
+        <Button
+            android:background="@color/color_button_1"
+            android:layout_width="@dimen/color_picker_button_size"
+            android:layout_height="@dimen/color_picker_button_size"
+            android:layout_margin="@dimen/color_picker_button_margin"
+            android:onClick="onColorSelected" />
+
+        <Button
+            android:background="@color/color_button_2"
+            android:layout_width="@dimen/color_picker_button_size"
+            android:layout_height="@dimen/color_picker_button_size"
+            android:layout_margin="@dimen/color_picker_button_margin"
+            android:onClick="onColorSelected" />
+
+        <Button
+            android:background="@color/color_button_3"
+            android:layout_width="@dimen/color_picker_button_size"
+            android:layout_height="@dimen/color_picker_button_size"
+            android:layout_margin="@dimen/color_picker_button_margin"
+            android:onClick="onColorSelected" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:background="@color/color_button_4"
+            android:layout_width="@dimen/color_picker_button_size"
+            android:layout_height="@dimen/color_picker_button_size"
+            android:layout_margin="@dimen/color_picker_button_margin"
+            android:onClick="onColorSelected" />
+
+        <Button
+            android:background="@color/color_button_5"
+            android:layout_width="@dimen/color_picker_button_size"
+            android:layout_height="@dimen/color_picker_button_size"
+            android:layout_margin="@dimen/color_picker_button_margin"
+            android:onClick="onColorSelected" />
+
+        <Button
+            android:background="@color/color_button_6"
+            android:layout_width="@dimen/color_picker_button_size"
+            android:layout_height="@dimen/color_picker_button_size"
+            android:layout_margin="@dimen/color_picker_button_margin"
+            android:onClick="onColorSelected" />
+
+    </TableRow>
+
+</TableLayout>

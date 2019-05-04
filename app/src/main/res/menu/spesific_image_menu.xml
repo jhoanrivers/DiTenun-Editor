@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ubahkristik"
+        android:orderInCategory="100"
+        android:title="Ubah Kristik" />
+    <item
+        android:id="@+id/share"
+        android:orderInCategory="100"
+        android:title="Bagikan" />
+    <item
+        android:id="@+id/detail"
+        android:orderInCategory="100"
+        android:title="Detail" />
+
+</menu>

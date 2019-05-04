@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.appstoremarketresearch.simplecolorpicker" >
+
+    <application
+        android:allowBackup="true" >
+        <activity
+            android:name=".controller.ColorPickerActivity"
+            android:label="@string/screen_label"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <receiver android:name=".event.ColorPickerEventNotifier"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="COLOR_SELECTED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SimpleColorPicker</string>
+    <string name="action_settings">Settings</string>
+    <string name="screen_label">Select a Color</string>
+</resources>
