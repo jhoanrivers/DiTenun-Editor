@@ -12,6 +12,7 @@ import android.graphics.PointF;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.asksira.imagepickersheetdemo.R;
+import com.asksira.imagepickersheetdemo.fragment.FlexibleSadum;
 import com.asksira.imagepickersheetdemo.gestures.MoveGestureDetector;
 import com.asksira.imagepickersheetdemo.gestures.RotateGestureDetector;
 
@@ -37,10 +39,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Sadum1Activity extends AppCompatActivity implements View.OnTouchListener{
+public class SadumFlexible extends AppCompatActivity implements View.OnTouchListener{
 
-
-    private ImageView ivImage1,imgbg, ivImage2, imgview6, imgview7, imgview8,imgview9,imgview10,imgview11,imgview12,imgview13,imgview14,imgview15,imgview16,imgview17,imgview18,imgview19,cancelimg,undoimg,redoimg,saveimg;
+    private ImageView ivImage1,imgbg, ivImage2,cancelimg,undoimg,redoimg,saveimg;
     SeekBar hueBar, satBar, valBar;
 
     final int RQS_IMAGE1 = 1;
@@ -72,10 +73,8 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sadum1);
+        setContentView(R.layout.activity_sadum_flexible);
         initial();
-
-
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         mScreenHeight = displayMetrics.heightPixels;
@@ -86,9 +85,9 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
         //ivImage2.setOnTouchListener(this);
         //image.setOnTouchListener(this);
 
-        scaleDetector = new ScaleGestureDetector(getApplicationContext(),new ScaleListener());
-        rotateGestureDetector = new RotateGestureDetector(getApplication(), new RotateListener());
-        moveGestureDetector = new MoveGestureDetector(getApplication(),new MoveListener());
+        scaleDetector = new ScaleGestureDetector(getApplicationContext(),new SadumFlexible.ScaleListener());
+        rotateGestureDetector = new RotateGestureDetector(getApplication(), new SadumFlexible.RotateListener());
+        moveGestureDetector = new MoveGestureDetector(getApplication(),new SadumFlexible.MoveListener());
 
 
 
@@ -122,7 +121,7 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
             public void onClick(View view) {
                 // exit function
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(Sadum1Activity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(SadumFlexible.this);
                 builder.setTitle("Batalkan Desain");
                 builder.setMessage("Anda yakin ingin membatalkan desain anda?")
                         .setCancelable(false)
@@ -161,11 +160,23 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
             }
         });
 
+        //Set ukuran template
+        SetSizebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
+                fts.add(R.id.containersize, new FlexibleSadum());
+                findViewById(R.id.layoutsize).setVisibility(View.GONE);
+                fts.addToBackStack("optional tag");
+                fts.commit();
+            }
+        });
+
         saveimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(Sadum1Activity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(SadumFlexible.this);
                 builder.setTitle("Simpan Desain");
                 //builder.setIcon(R.drawable.ic_cancel);
                 builder.setMessage("Anda ingin menyimpan gambar?")
@@ -176,7 +187,7 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
                                 relativeimages.setDrawingCacheEnabled(true);
                                 Bitmap mybitmap = relativeimages.getDrawingCache();
                                 startSave(mybitmap);
-                                startActivity(new Intent(Sadum1Activity.this, DashboardActivity.class));
+                                startActivity(new Intent(SadumFlexible.this, DashboardActivity.class));
                                 finish();
                             }
                         })
@@ -199,6 +210,7 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
 
         File dirfile = new File(filepath.getAbsoluteFile()+"/DE disimpan/");
         dirfile.mkdirs();
+
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyymmsshhmmss");
         String date = simpleDateFormat.format(new Date());
@@ -223,13 +235,13 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
         refreshGallery(newFile);
     }
 
-
     // Untuk merefresh gallery setelah gambar disimpan
     public void refreshGallery(File file){
         Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         intent.setData(Uri.fromFile(file));
         sendBroadcast(intent);
     }
+
 
 
     private void initial() {
@@ -239,16 +251,35 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
         SelectMotifbtn = findViewById(R.id.motif_image);
 
         //ivImage3 = findViewById(R.id.iv_image3);
-        relativeimages = findViewById(R.id.containertemplate);
-
         cancelimg = findViewById(R.id.cancel_imgview);
         undoimg = findViewById(R.id.undo_imgview);
         redoimg = findViewById(R.id.redo_imgview);
         saveimg = findViewById(R.id.save_imgview);
-
+        SetSizebtn = findViewById(R.id.btnsettem);
 
     }
 
+    public void fsize(String hs, String ws) {
+
+        btnstatus = true;
+
+        int h = Integer.parseInt(hs)*5;
+        int w = Integer.parseInt(ws)*5;
+
+        //Relative layout untuk image template
+        relativeimages = (RelativeLayout) findViewById(R.id.containertemplate);
+
+        relativeimages.getLayoutParams().height = (int) h;
+        relativeimages.getLayoutParams().width = (int) w ;
+        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) relativeimages.getLayoutParams();
+        lp.addRule(RelativeLayout.CENTER_IN_PARENT);
+
+        //sembunyikan notifbar
+        hideSystemUI();
+
+
+
+    }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
@@ -338,9 +369,7 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
                         image = new ImageView(this);
                         image.setLayoutParams(new LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
                         image.setScaleType(ImageView.ScaleType.MATRIX);
-
                         image.setOnTouchListener(this);
-
                         matrix.postScale(mscaleFactor,mscaleFactor);
                         image.setImageMatrix(matrix);
 
@@ -521,9 +550,6 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
-
-
-
 
 
 }

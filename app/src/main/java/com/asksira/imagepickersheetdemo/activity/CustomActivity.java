@@ -13,7 +13,6 @@ import android.net.Uri;
 import android.os.Environment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,9 +29,6 @@ import android.widget.Toast;
 
 import com.asksira.imagepickersheetdemo.R;
 import com.asksira.imagepickersheetdemo.fragment.FragmentCustomSize;
-import com.asksira.imagepickersheetdemo.fragment.FragmentMangiringTemp;
-import com.asksira.imagepickersheetdemo.fragment.FragmentSadumSize;
-import com.asksira.imagepickersheetdemo.fragment.JuggiahFragment;
 import com.asksira.imagepickersheetdemo.gestures.MoveGestureDetector;
 import com.asksira.imagepickersheetdemo.gestures.RotateGestureDetector;
 

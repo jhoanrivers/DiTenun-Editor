@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
-
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -14,10 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.asksira.imagepickersheetdemo.R;
-import com.asksira.imagepickersheetdemo.activity.CustomActivity;
 import com.asksira.imagepickersheetdemo.activity.Sadum1Activity;
+import com.asksira.imagepickersheetdemo.activity.SadumFlexible;
 
-public class FragmentSadumSize extends Fragment {
+
+public class FlexibleSadum extends Fragment {
     EditText heightsisi,widthsisi;
     Button selesai;
     private View v;
@@ -26,8 +26,7 @@ public class FragmentSadumSize extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_sadum_size, container, false);
-
+        View v = inflater.inflate(R.layout.fragment_sadum_size, container, false);
 
         heightsisi = v.findViewById(R.id.heightsizeid);
         widthsisi = v.findViewById(R.id.widthsizeid);
@@ -46,7 +45,7 @@ public class FragmentSadumSize extends Fragment {
                     widthsisi.setError("Required");
 
                 } else {
-                    Sadum1Activity rg = (Sadum1Activity) getActivity();
+                    SadumFlexible rg = (SadumFlexible) getActivity();
                     rg.fsize(hs, ws);
                     rg.onBackPressed();
                 }

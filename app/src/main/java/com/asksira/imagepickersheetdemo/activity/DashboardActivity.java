@@ -84,7 +84,7 @@ public class DashboardActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         switch (i){
                             case 0:
-                                Intent intent1 = new Intent(DashboardActivity.this, Sadum1Activity.class);
+                                Intent intent1 = new Intent(DashboardActivity.this, ChooseBasicSadum.class);
                                 startActivity(intent1);
                                 break;
                             case 1:

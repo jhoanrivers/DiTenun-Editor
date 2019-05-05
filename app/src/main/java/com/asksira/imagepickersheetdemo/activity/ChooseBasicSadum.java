@@ -19,20 +19,17 @@ public class ChooseBasicSadum extends AppCompatActivity {
 
 
     String[] listviewTitle = new String[]{
-            "Sadum Tipe 1", "Sadum Tipe 2", "Sadum Tipe 3", "Sadum Tipe 4",
-            "Sadum Tipe 5",
+            "Sadum Bonggit 1", "Sadum Bonggit 2", "Sadum Fleksibel",
     };
 
 
     int[] listviewImage = new int[]{
-            R.drawable.image0,R.drawable.image0,R.drawable.image0,R.drawable.image0,R.drawable.image0,
+            R.drawable.image0,R.drawable.image0,R.drawable.image0,
     };
 
     String[] listviewShortDescription = new String[]{
-            "Ukuran 190 x 72 cm", "184 x 67 cm", "167 x 60 cm", "167 x 73 cm",
-            "167 x 43 cm",
+            "Bonggit tipe 1 ukuran 180x90cm", "Bonggit tipe 2 ukuran 180x90cm", "Ukuran dan motif dapat diatur sesuai keinginan",
     };
-
 
 
     @Override
@@ -47,7 +44,7 @@ public class ChooseBasicSadum extends AppCompatActivity {
 
         List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             HashMap<String, String> hm = new HashMap<String, String>();
             hm.put("listview_title", listviewTitle[i]);
             hm.put("listview_discription", listviewShortDescription[i]);
@@ -76,19 +73,10 @@ public class ChooseBasicSadum extends AppCompatActivity {
                         finish();
                         break;
                     case 2:
-                        startActivity(new Intent(ChooseBasicSadum.this, Sadum3Activity.class));
+                        startActivity(new Intent(ChooseBasicSadum.this, SadumFlexible.class));
                         finish();
                         break;
-                    case 3:
-                        startActivity(new Intent(ChooseBasicSadum.this,Sadum4Activity.class));
-                        finish();
-                        break;
-                    case 4:
-                        startActivity(new Intent(ChooseBasicSadum.this,Sadum5Activity.class));
-                        finish();
-                        break;
-                    default:
-                        Toast.makeText(getApplicationContext(), "No Template available",Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
