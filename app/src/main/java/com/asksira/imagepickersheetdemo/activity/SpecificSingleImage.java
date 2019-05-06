@@ -55,10 +55,9 @@ public class SpecificSingleImage extends AppCompatActivity {
         setContentView(R.layout.activity_specific_single_image);
 
         //showing back button in the toolbar
+        assert getSupportActionBar() != null;   //null check
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //Toolbar
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
 
 
         // Retrieve data from MainActivity on GridView item click
@@ -111,6 +110,12 @@ public class SpecificSingleImage extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 
 

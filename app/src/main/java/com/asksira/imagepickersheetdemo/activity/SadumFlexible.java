@@ -39,6 +39,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static android.view.View.GONE;
+
 public class SadumFlexible extends AppCompatActivity implements View.OnTouchListener{
 
     private ImageView ivImage1,imgbg, ivImage2,cancelimg,undoimg,redoimg,saveimg;
@@ -81,6 +83,52 @@ public class SadumFlexible extends AppCompatActivity implements View.OnTouchList
         mScreenWidth = displayMetrics.widthPixels;
 
 
+        //Color background template
+        findViewById(R.id.bgColor).setVisibility(View.GONE);
+        findViewById(R.id.motif_image).setVisibility(GONE);
+
+
+
+        //Button change color picked
+        findViewById(R.id.btnCalmRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnGreen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.blueberry);
+            }
+        });
+        findViewById(R.id.btnYellow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.yellow);
+            }
+        });
+
+      // end of color bg
+
+
+
+
+
+
+
         //Ontouch
         //ivImage2.setOnTouchListener(this);
         //image.setOnTouchListener(this);
@@ -88,7 +136,6 @@ public class SadumFlexible extends AppCompatActivity implements View.OnTouchList
         scaleDetector = new ScaleGestureDetector(getApplicationContext(),new SadumFlexible.ScaleListener());
         rotateGestureDetector = new RotateGestureDetector(getApplication(), new SadumFlexible.RotateListener());
         moveGestureDetector = new MoveGestureDetector(getApplication(),new SadumFlexible.MoveListener());
-
 
 
         SelectMotifbtn.setOnClickListener(new View.OnClickListener() {
@@ -106,9 +153,9 @@ public class SadumFlexible extends AppCompatActivity implements View.OnTouchList
         valBar = (SeekBar) findViewById(R.id.valbar);
 
         //Saat belum ada foto
-        hueBar.setVisibility(View.GONE);
-        satBar.setVisibility(View.GONE);
-        valBar.setVisibility(View.GONE);
+        hueBar.setVisibility(GONE);
+        satBar.setVisibility(GONE);
+        valBar.setVisibility(GONE);
 
         hueBar.setOnSeekBarChangeListener(seekBarChangeListener);
         satBar.setOnSeekBarChangeListener(seekBarChangeListener);
@@ -166,7 +213,7 @@ public class SadumFlexible extends AppCompatActivity implements View.OnTouchList
             public void onClick(View v) {
                 FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
                 fts.add(R.id.containersize, new FlexibleSadum());
-                findViewById(R.id.layoutsize).setVisibility(View.GONE);
+                findViewById(R.id.layoutsize).setVisibility(GONE);
                 fts.addToBackStack("optional tag");
                 fts.commit();
             }
@@ -271,11 +318,16 @@ public class SadumFlexible extends AppCompatActivity implements View.OnTouchList
 
         relativeimages.getLayoutParams().height = (int) h;
         relativeimages.getLayoutParams().width = (int) w ;
+        relativeimages.setBackgroundResource(R.color.white);
         RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) relativeimages.getLayoutParams();
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
 
         //sembunyikan notifbar
         hideSystemUI();
+
+        //Tampilkan bgColor dan Button Motif
+        findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
+        findViewById(R.id.motif_image).setVisibility(View.VISIBLE);
 
 
 
@@ -311,7 +363,7 @@ public class SadumFlexible extends AppCompatActivity implements View.OnTouchList
             fragmentManager.popBackStack();
 
             if(btnstatus){
-                findViewById(R.id.layoutsize).setVisibility(View.GONE);
+                findViewById(R.id.layoutsize).setVisibility(GONE);
             }
             else{
                 findViewById(R.id.layoutsize).setVisibility(View.VISIBLE);

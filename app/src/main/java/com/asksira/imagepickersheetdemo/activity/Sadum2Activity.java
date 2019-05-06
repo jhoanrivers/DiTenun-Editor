@@ -1,6 +1,7 @@
 package com.asksira.imagepickersheetdemo.activity;
 
 import android.content.ClipData;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -19,8 +20,11 @@ import android.view.DragEvent;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,17 +43,15 @@ public class Sadum2Activity extends AppCompatActivity {
 
     private ImageView ivImage1,imgbg, ivImage2, imgview6, imgview7, imgview8,imgview9,imgview10,imgview11,imgview12,imgview13,imgview14,imgview15,imgview16,imgview17,imgview18,imgview19,cancelimg,undoimg,redoimg,saveimg;
 
-    Button btnLoadImage;
-    TextView textSource;
+    Button btnLoadImage,Ucapanbtn,showEdtUcapan;
+    TextView textSource,txtUcapan;
     ImageView imageMotif;
     SeekBar hueBar, satBar, valBar;
-    TextView hueText, satText, valText;
-
     final int RQS_IMAGE1 = 1;
-
     Uri source;
     Bitmap bitmapMaster;
-    Canvas canvasMaster;
+    EditText edtUcapan;
+    RelativeLayout containerUcapan,containertemplate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,40 @@ public class Sadum2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_sadum2);
 
         initial();
-        touchAndDrag();
+        //touchAndDrag();
+
+        //Ucapan condition
+        containerUcapan.setVisibility(View.GONE);
+
+        showEdtUcapan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                containerUcapan.setVisibility(View.VISIBLE);
+            }
+        });
+
+        Ucapanbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String textucapan = edtUcapan.getText().toString();
+
+                if(textucapan.length() > 15 && textucapan.length() < 20){
+                    txtUcapan.setTextSize(20);
+                }
+                else if(textucapan.length() > 20){
+                    txtUcapan.setTextSize(15);
+                }
+                else
+                    txtUcapan.setTextSize(24);
+                txtUcapan.setText(textucapan);
+                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+                hideSystemUI();
+                containerUcapan.setVisibility(View.GONE);
+            }
+        });
+
+
 
         btnLoadImage = (Button) findViewById(R.id.motif_image);
         textSource = (TextView) findViewById(R.id.sourceuri);
@@ -146,40 +181,11 @@ public class Sadum2Activity extends AppCompatActivity {
                         .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
-                                //Create new Imageview as a container to catch all the images
-                                imgbg.buildDrawingCache();
-                                imgview6.buildDrawingCache();
-                                imgview7.buildDrawingCache();
-                                imgview8.buildDrawingCache();
-                                imgview9.buildDrawingCache();
-                                imgview10.buildDrawingCache();
-                                imgview11.buildDrawingCache();
-                                imgview12.buildDrawingCache();
-                                imgview13.buildDrawingCache();
-                                imgview14.buildDrawingCache();
-                                imgview15.buildDrawingCache();
-                                imgview16.buildDrawingCache();
-
-
-                                Bitmap imagebg = imgbg.getDrawingCache();
-                                Bitmap image6= imgview6.getDrawingCache();
-                                Bitmap image7 = imgview7.getDrawingCache();
-                                Bitmap image8 = imgview8.getDrawingCache();
-                                Bitmap image9 = imgview9.getDrawingCache();
-                                Bitmap image10 = imgview10.getDrawingCache();
-                                Bitmap image11 = imgview11.getDrawingCache();
-                                Bitmap image12 = imgview12.getDrawingCache();
-                                Bitmap image13 = imgview13.getDrawingCache();
-                                Bitmap image14 = imgview14.getDrawingCache();
-                                Bitmap image15 = imgview15.getDrawingCache();
-                                Bitmap image16 = imgview16.getDrawingCache();
-
-
-                                Bitmap mergeAllImage= createSingleImageFromMultipleImage(imagebg,image6,image7,image8,image9,image10,image11,image12,image13,image14,image15,image16);
-
-                                startSave(mergeAllImage);
-                                startActivity(new Intent(Sadum2Activity.this, DashboardActivity.class));
-                                finish();
+                               containertemplate.setDrawingCacheEnabled(true);
+                               Bitmap myBitmap = containertemplate.getDrawingCache();
+                               startSave(myBitmap);
+                               startActivity(new Intent(Sadum2Activity.this, DashboardActivity.class));
+                               finish();
                             }
                         })
                         .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
@@ -201,25 +207,21 @@ public class Sadum2Activity extends AppCompatActivity {
 
     } // end of Oncreate
     public void startSave(Bitmap image){
-        FileOutputStream fout = null;
-        File file = getDisc();
+        FileOutputStream fout =null;
+        File filepath = Environment.getExternalStorageDirectory();
 
-        if(!file.exists() && !file.mkdir()){
-            Toast.makeText(this,"cant create directory",Toast.LENGTH_SHORT).show();
-            return;
-        }
+        File dirfile = new File(filepath.getAbsoluteFile()+"/DE disimpan/");
+        dirfile.mkdirs();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyymmsshhmmss");
         String date = simpleDateFormat.format(new Date());
         String name = "Img"+date+".jpg";
-        String file_name = file.getAbsolutePath()+"/"+name;
-        File newFile = new File(file_name);
+//        String file_name = filepath.getAbsolutePath()+"/"+name;
+        File newFile = new File(dirfile.getAbsolutePath()+"/"+name);
+
         try{
             fout = new FileOutputStream(newFile);
-
-
             //Bitmap bitmap = viewToBitmap(imgbg,imgbg.getWidth(),imgbg.getHeight());
-
             image.compress(Bitmap.CompressFormat.JPEG,100,fout);
             Toast.makeText(this, "Gambar Telah disimpan", Toast.LENGTH_SHORT).show();
             fout.flush();
@@ -234,26 +236,6 @@ public class Sadum2Activity extends AppCompatActivity {
         refreshGallery(newFile);
     }
 
-    private Bitmap createSingleImageFromMultipleImage(Bitmap imagebg, Bitmap image6, Bitmap image7, Bitmap image8, Bitmap image9, Bitmap image10, Bitmap image11, Bitmap image12, Bitmap image13, Bitmap image14, Bitmap image15, Bitmap image16) {
-
-        Bitmap result = Bitmap.createBitmap(imagebg.getWidth(),imagebg.getHeight(),imagebg.getConfig());
-        Canvas canvas= new Canvas(result);
-        canvas.drawBitmap(imagebg,0,0,null);
-        canvas.drawBitmap(image6,0,0f,null);
-        canvas.drawBitmap(image7,50,0f,null);
-        canvas.drawBitmap(image8,100,0f,null);
-        canvas.drawBitmap(image9,150,0f,null);
-        canvas.drawBitmap(image10,200,0f,null);
-        canvas.drawBitmap(image11,250,0f,null);
-        canvas.drawBitmap(image12,300,0f,null);
-        canvas.drawBitmap(image13,350,0f,null);
-        canvas.drawBitmap(image14,400,0f,null);
-        canvas.drawBitmap(image15,450,0f,null);
-        canvas.drawBitmap(image16,500,0f,null);
-
-        return result;
-
-    }
 
     // Untuk merefresh gallery setelah gambar disimpan
     public void refreshGallery(File file){
@@ -261,17 +243,6 @@ public class Sadum2Activity extends AppCompatActivity {
         intent.setData(Uri.fromFile(file));
         sendBroadcast(intent);
     }
-
-    // Membuat file baru
-    private File getDisc(){
-
-        File file = new File(Environment.getExternalStorageDirectory()+File.separator + "DE disimpan" );
-        return file;
-
-    }
-
-
-
 
 
     @Override
@@ -443,6 +414,16 @@ public class Sadum2Activity extends AppCompatActivity {
         redoimg = findViewById(R.id.redo_imgview);
         saveimg = findViewById(R.id.save_imgview);
 
+
+        //Ucapan
+        txtUcapan = findViewById(R.id.txt_ucapan);
+        Ucapanbtn = findViewById(R.id.btn_ucapan);
+        edtUcapan = findViewById(R.id.edt_ucapan);
+        showEdtUcapan = findViewById(R.id.btnshowucapan);
+        containerUcapan = findViewById(R.id.edtucapancontainer);
+
+        //Container template
+        containertemplate = findViewById(R.id.containertemplatesadum2);
 
     }
 

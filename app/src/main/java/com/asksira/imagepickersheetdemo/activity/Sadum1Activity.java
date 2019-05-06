@@ -1,6 +1,7 @@
 package com.asksira.imagepickersheetdemo.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -19,6 +20,7 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,7 +44,7 @@ import java.util.Date;
 public class Sadum1Activity extends AppCompatActivity implements View.OnTouchListener{
 
 
-    private ImageView ivImage1,imgbg, ivImage2, imgview6, imgview7, imgview8,imgview9,imgview10,imgview11,imgview12,imgview13,imgview14,imgview15,imgview16,imgview17,imgview18,imgview19,cancelimg,undoimg,redoimg,saveimg;
+    private ImageView ivImage1,imgbg, ivImage2, imgview6,cancelimg,undoimg,redoimg,saveimg;
     SeekBar hueBar, satBar, valBar;
     EditText edtUcapan;
     TextView textUcapan;
@@ -69,7 +71,6 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
     RelativeLayout relativeimages,ContainerUcapan;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +79,43 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
 
         //Edit text container tidak muncul
         ContainerUcapan.setVisibility(View.GONE);
+
+
+        //Chooose color for Background
+        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.blueberry);
+            }
+        });
+
+        findViewById(R.id.btnYellow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.yellow);
+            }
+        });
+
+        //end of choose background color
+
 
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -101,6 +139,18 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
             public void onClick(View view) {
                 ContainerUcapan.setVisibility(View.VISIBLE);
                 btnstatus= true;
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,0);
+            }
+        });
+
+        textUcapan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContainerUcapan.setVisibility(View.VISIBLE);
+                btnstatus= true;
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,0);
             }
         });
 
@@ -108,7 +158,24 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
             @Override
             public void onClick(View view) {
                 String ucapan = edtUcapan.getText().toString();
+                if(ucapan.length()==0){
+                    textUcapan.setText("Kata Ucapan");
+                    textUcapan.setTextSize(24);
+                }
+
+                if(ucapan.length() > 15 && ucapan.length() < 20){
+                    textUcapan.setTextSize(20);
+                }
+                else if(ucapan.length() > 20){
+                    textUcapan.setTextSize(15);
+                }
+                else
+                    textUcapan.setTextSize(24);
+
                 textUcapan.setText(ucapan);
+                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+                hideSystemUI();
                 ContainerUcapan.setVisibility(View.GONE);
             }
         });

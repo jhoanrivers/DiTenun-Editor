@@ -24,15 +24,23 @@
             android:src="@drawable/sadum_template_1"
             />
 
-        <ImageView
-            android:id="@+id/iv_image2"
+
+        <TextView
+            android:id="@+id/txt_ucapan"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="106dp"
-            android:scaleType="matrix"
-            android:layout_weight="1" />
+            android:layout_centerVertical="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="200dp"
+            android:textSize="24dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:letterSpacing="0.5"
+            android:hint="Kata Ucapan"
+            android:textColor="@color/white"
+            />
 
     </RelativeLayout>
 
@@ -43,10 +51,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="207dp"
-        android:background="@drawable/ic_pattern" />
+        android:background="@drawable/ic_pattern_1" />
 
     <Button
         android:id="@+id/btnshowucapan"
@@ -55,11 +63,10 @@
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/ic_letter_a"
-
         />
 
 
@@ -117,6 +124,63 @@
         </LinearLayout>
     </RelativeLayout>
 
+
+
+    <ScrollView
+        android:id="@+id/bgColor"
+        android:layout_width="40dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/style_dialog"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnCalmRed"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/color_palete_calmred" />
+
+            <Button
+                android:id="@+id/btnDarkRed"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_darkred" />
+
+            <Button
+                android:id="@+id/btnGreen"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_green" />
+
+            <Button
+                android:id="@+id/btnBlue"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_blue" />
+
+
+            <Button
+                android:id="@+id/btnYellow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_yellow" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
     <RelativeLayout
         android:id="@+id/edtucapancontainer"
         android:layout_width="wrap_content"
@@ -147,19 +211,7 @@
             />
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/txt_ucapan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="200dp"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:letterSpacing="1"
-        />
+
 
 
 

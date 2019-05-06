@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activity.MangiringActivity"
     android:id="@+id/backgroundalltemp"
+    android:background="@color/black"
     >
 
     <RelativeLayout
-        android:id="@+id/relativeimage"
+        android:id="@+id/containermangiring"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -19,18 +20,259 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/template_sadum_1"
             />
+        <!--android:src="@drawable/mangiring_template"-->
 
-        <ImageView
-            android:id="@+id/imgtemplatetgh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/template_bm_2"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgline1"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                />
+            <ImageView
+                android:id="@+id/imgline2"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                />
+            <ImageView
+                android:id="@+id/imgline3"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:ignore="ContentDescription"
+                />
+            <ImageView
+                android:id="@+id/imgline4"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline5"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline6"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline7"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline8"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline9"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline10"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline11"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline12"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline13"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline14"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline15"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline16"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline17"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline18"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline19"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline20"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline21"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline22"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline23"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline24"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline25"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline26"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline27"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline28"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+            />
+            <ImageView
+                android:id="@+id/imgline29"
+                android:layout_width="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
             />
 
+            <ImageView
+                android:id="@+id/imgline30"
+            android:layout_width="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -51,7 +293,8 @@
             android:layout_height="20dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="4dp"
-            app:srcCompat="@drawable/ic_cross" />
+            app:srcCompat="@drawable/ic_cross"
+            tools:ignore="VectorDrawableCompat" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -67,7 +310,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="38dp"
-                app:srcCompat="@drawable/ic_reply" />
+                app:srcCompat="@drawable/ic_reply"
+                tools:ignore="VectorDrawableCompat" />
 
             <ImageView
                 android:id="@+id/redo_imgview"
@@ -76,7 +320,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="36dp"
-                app:srcCompat="@drawable/ic_forward" />
+                app:srcCompat="@drawable/ic_forward"
+                tools:ignore="VectorDrawableCompat" />
 
             <ImageView
                 android:id="@+id/save_imgview"
@@ -84,23 +329,56 @@
                 android:layout_height="20dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="4dp"
-                app:srcCompat="@drawable/ic_check" />
+                app:srcCompat="@drawable/ic_check"
+                tools:ignore="VectorDrawableCompat" />
 
         </LinearLayout>
-
     </RelativeLayout>
 
+    <ScrollView
+        android:id="@+id/bgColor"
+        android:layout_above="@+id/btnforpattern"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:padding="5dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_marginRight="10dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnCalmRed"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/color_palete_calmred"
+                    />
+
+                <Button
+                    android:id="@+id/btnDarkRed"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/color_palete_darkred"
+                    />
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/btnforpattern"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:padding="5dp"
-        android:layout_marginEnd="10dp"
         android:layout_centerVertical="true"
         android:orientation="vertical"
-        >
+        android:layout_marginRight="10dp">
+
 
         <Button
             android:id="@+id/btnjuggiah"
@@ -118,55 +396,14 @@
             />
 
         <Button
-            android:id="@+id/btnselectmotif"
+            android:id="@+id/motif_image"
             android:background="@drawable/ic_pattern_1"
             android:layout_marginTop="20dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
             />
 
-
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textsettem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ukuran Template"
-        android:layout_above="@+id/settem"
-        android:layout_marginBottom="10dp"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:layout_centerHorizontal="true"
-        />
-
-
-    <Button
-        android:id="@+id/settem"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:text="Atur Template"
-        android:textColor="@color/black"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        />
-
-    <FrameLayout
-        android:id="@+id/containerfragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/containerfragmentjuggiah"
-        android:layout_width="340dp"
-        android:layout_height="600dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        >
-    </FrameLayout>
-
 
 
 </RelativeLayout>

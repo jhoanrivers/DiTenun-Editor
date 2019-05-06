@@ -21,7 +21,7 @@
         <activity android:name=".activity.ChangeImageColor" />
         <activity
             android:name=".activity.SpecificSingleImage"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity -->
+            android:theme="@style/AppTheme" /> <!-- <activity -->
         <!-- android:name=".activity.HomeActivity" -->
         <!-- android:label="@string/title_activity_home"></activity> -->
         <activity
