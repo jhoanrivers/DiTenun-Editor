@@ -7,14 +7,69 @@
     tools:context=".activity.Sadum1Activity"
     android:background="@color/black">
 
-    <ImageView
-        android:id="@+id/img_bg"
-        android:layout_width="match_parent"
+
+    <RelativeLayout
+        android:id="@+id/layoutcontainerBM"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:src="@drawable/template_bm_1_activity"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/BloodkRed"
+        >
+
+        <RelativeLayout
+            android:id="@+id/layoutcontainercenter"
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black"
+            >
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/templateulos_bm_2"
+            />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/bgColor"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/style_dialog"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnBlack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/color_palete_black" />
+
+            <Button
+                android:id="@+id/btnDarkRed"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_darkred" />
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <ImageView
         android:id="@+id/motif_image"
@@ -26,7 +81,7 @@
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:layout_marginBottom="207dp"
-        android:background="@drawable/ic_pattern" />
+        android:background="@drawable/ic_pattern_1" />
 
     <ImageView
         android:id="@+id/iv_image2"

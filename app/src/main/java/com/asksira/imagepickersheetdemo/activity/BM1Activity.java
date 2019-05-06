@@ -21,6 +21,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,7 +54,7 @@ public class BM1Activity extends AppCompatActivity{
     Uri source;
     Bitmap bitmapMaster;
     Canvas canvasMaster;
-
+    RelativeLayout containerBM,containercenterBM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +64,23 @@ public class BM1Activity extends AppCompatActivity{
         touchAndDrag();
 
 
-        //Onclick Listener
+        //button change color background
+        findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                containercenterBM.setBackgroundResource(R.color.black);
+            }
+        });
 
+        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                containercenterBM.setBackgroundResource(R.color.BloodkRed);
+            }
+        });
+
+
+        //Onclick Listener
         findViewById(R.id.motif_image).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -307,6 +323,11 @@ public class BM1Activity extends AppCompatActivity{
         undoimg = findViewById(R.id.undo_imgview);
         redoimg = findViewById(R.id.redo_imgview);
         saveimg = findViewById(R.id.save_imgview);
+
+        //container background
+
+        containerBM = findViewById(R.id.layoutcontainerBM);
+        containercenterBM = findViewById(R.id.layoutcontainercenter);
 
 
     }
