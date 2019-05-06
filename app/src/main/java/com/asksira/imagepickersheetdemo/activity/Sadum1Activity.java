@@ -20,10 +20,12 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.asksira.imagepickersheetdemo.R;
@@ -42,13 +44,12 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
 
     private ImageView ivImage1,imgbg, ivImage2, imgview6, imgview7, imgview8,imgview9,imgview10,imgview11,imgview12,imgview13,imgview14,imgview15,imgview16,imgview17,imgview18,imgview19,cancelimg,undoimg,redoimg,saveimg;
     SeekBar hueBar, satBar, valBar;
-
+    EditText edtUcapan;
+    TextView textUcapan;
     final int RQS_IMAGE1 = 1;
-
     Uri source;
     Bitmap bitmapMaster;
-    Canvas canvasMaster;
-    Button SetSizebtn,SelectMotifbtn;
+    Button SelectMotifbtn,Ucapanbtn,ShowUcapanBtn;
     static boolean btnstatus=false;
 
     private float mscaleFactor = 0.5f;
@@ -65,7 +66,7 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
     private MoveGestureDetector moveGestureDetector;
 
     ImageView image;
-    RelativeLayout relativeimages;
+    RelativeLayout relativeimages,ContainerUcapan;
 
 
 
@@ -74,6 +75,9 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sadum1);
         initial();
+
+        //Edit text container tidak muncul
+        ContainerUcapan.setVisibility(View.GONE);
 
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -89,6 +93,25 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
         scaleDetector = new ScaleGestureDetector(getApplicationContext(),new ScaleListener());
         rotateGestureDetector = new RotateGestureDetector(getApplication(), new RotateListener());
         moveGestureDetector = new MoveGestureDetector(getApplication(),new MoveListener());
+
+
+
+        ShowUcapanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ContainerUcapan.setVisibility(View.VISIBLE);
+                btnstatus= true;
+            }
+        });
+
+        Ucapanbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String ucapan = edtUcapan.getText().toString();
+                textUcapan.setText(ucapan);
+                ContainerUcapan.setVisibility(View.GONE);
+            }
+        });
 
 
 
@@ -245,6 +268,13 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
         undoimg = findViewById(R.id.undo_imgview);
         redoimg = findViewById(R.id.redo_imgview);
         saveimg = findViewById(R.id.save_imgview);
+
+        //ucapan
+        ContainerUcapan = findViewById(R.id.edtucapancontainer);
+        Ucapanbtn = findViewById(R.id.btn_ucapan);
+        edtUcapan = findViewById(R.id.edt_ucapan);
+        ShowUcapanBtn = findViewById(R.id.btnshowucapan);
+        textUcapan = findViewById(R.id.txt_ucapan);
 
 
     }
