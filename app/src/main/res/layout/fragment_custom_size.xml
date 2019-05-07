@@ -8,9 +8,9 @@
 
     <RelativeLayout
         android:layout_width="340dp"
-        android:layout_height="240dp"
+        android:layout_height="360dp"
         android:layout_gravity="center"
-        android:background="@drawable/style_dialog"
+        android:background="@color/white"
         android:padding="10dp"
         >
 
@@ -30,7 +30,6 @@
                 android:text="Atur Ukuran Template"
                 android:textColorHint="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
                 android:textColor="@color/blackcalm"
                 />
 
@@ -50,7 +49,8 @@
                     android:hint="Height"
                     android:textSize="20dp"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                  />
 
                 <EditText
                     android:id="@+id/widthsizeid"
@@ -63,8 +63,55 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:textSize="20dp"
+                    android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txttgh"
+                android:layout_below="@id/edtsisi"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Atur Ukuran Tengah"
+                android:textSize="20dp"
+                android:textColor="@color/blackcalm"
+                />
+
+            <RelativeLayout
+                android:id="@+id/edttgh"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/txttgh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <EditText
+                    android:id="@+id/tinggitengah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="5"
+                    android:hint="Height"
+                    android:textSize="20dp"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/lebartengah"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:ems="5"
+                    android:hint="Width"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
+
+
 
         </RelativeLayout>
 

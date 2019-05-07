@@ -1,5 +1,6 @@
 package com.asksira.imagepickersheetdemo.activity;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,27 +10,35 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.PointF;
 import android.net.Uri;
 import android.opengl.Visibility;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.DragEvent;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.asksira.imagepickersheetdemo.R;
+import com.asksira.imagepickersheetdemo.gestures.MoveGestureDetector;
+import com.asksira.imagepickersheetdemo.gestures.RotateGestureDetector;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,77 +47,242 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Sadum2Activity extends AppCompatActivity {
+public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchListener{
 
-
-    private ImageView ivImage1,imgbg, ivImage2, imgview6, imgview7, imgview8,imgview9,imgview10,imgview11,imgview12,imgview13,imgview14,imgview15,imgview16,imgview17,imgview18,imgview19,cancelimg,undoimg,redoimg,saveimg;
-
-    Button btnLoadImage,Ucapanbtn,showEdtUcapan;
-    TextView textSource,txtUcapan;
-    ImageView imageMotif;
+    private ImageView ivImage1,imgbg, ivImage2, imgview6,cancelimg,undoimg,redoimg,saveimg;
     SeekBar hueBar, satBar, valBar;
+    EditText edtUcapan;
+    TextView textUcapan;
     final int RQS_IMAGE1 = 1;
     Uri source;
     Bitmap bitmapMaster;
-    EditText edtUcapan;
-    RelativeLayout containerUcapan,containertemplate;
+    Button SelectMotifbtn,Ucapanbtn,ShowUcapanBtn;
+    static boolean btnstatus=false;
+
+    private float mscaleFactor = 0.5f;
+    private float mrotationDegree =0.f;
+    private float mFocusX =0.f;
+    private float mFocusY =0.f;
+    private int mScreenHeight;
+    private int mScreenWidth;
+
+    private Matrix matrix =new Matrix();
+    private int mImagewidth,mImageheight;
+    private ScaleGestureDetector scaleDetector;
+    private RotateGestureDetector rotateGestureDetector;
+    private MoveGestureDetector moveGestureDetector;
+
+    ImageView image;
+    RelativeLayout relativeimages,ContainerUcapan;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sadum2);
-
         initial();
-        //touchAndDrag();
 
-        //Ucapan condition
-        containerUcapan.setVisibility(View.GONE);
+        //Edit text container tidak muncul
+        ContainerUcapan.setVisibility(View.GONE);
 
-        showEdtUcapan.setOnClickListener(new View.OnClickListener() {
+
+        //Chooose color for Background
+        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                containerUcapan.setVisibility(View.VISIBLE);
+                relativeimages.setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.blueberry);
+            }
+        });
+
+        findViewById(R.id.btnYellow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.yellow);
+            }
+        });
+
+        findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.black);
+            }
+        });
+
+        //Center Edit
+        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.blueberry);
+            }
+        });
+
+        findViewById(R.id.btnYellow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.yellow);
+            }
+        });
+
+        findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.black);
+            }
+        });
+
+        //Edit Color center background
+
+        findViewById(R.id.btnDarkRedCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRedCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreenCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlueCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.blueberry);
+            }
+        });
+
+        findViewById(R.id.btnYellowCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.yellow);
+            }
+        });
+
+        findViewById(R.id.btnBlackCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.black);
+            }
+        });
+
+        //Center background
+
+        //end of choose background color
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        mScreenHeight = displayMetrics.heightPixels;
+        mScreenWidth = displayMetrics.widthPixels;
+
+
+        //Ontouch
+        //ivImage2.setOnTouchListener(this);
+        //image.setOnTouchListener(this);
+
+        scaleDetector = new ScaleGestureDetector(getApplicationContext(),new ScaleListener());
+        rotateGestureDetector = new RotateGestureDetector(getApplication(), new RotateListener());
+        moveGestureDetector = new MoveGestureDetector(getApplication(),new MoveListener());
+
+
+
+        ShowUcapanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ContainerUcapan.setVisibility(View.VISIBLE);
+                btnstatus= true;
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,0);
+            }
+        });
+
+        textUcapan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContainerUcapan.setVisibility(View.VISIBLE);
+                btnstatus= true;
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,0);
             }
         });
 
         Ucapanbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String textucapan = edtUcapan.getText().toString();
-
-                if(textucapan.length() > 15 && textucapan.length() < 20){
-                    txtUcapan.setTextSize(20);
+            public void onClick(View view) {
+                String ucapan = edtUcapan.getText().toString();
+                if(ucapan.length()==0){
+                    textUcapan.setText("Kata Ucapan");
+                    textUcapan.setTextSize(24);
                 }
-                else if(textucapan.length() > 20){
-                    txtUcapan.setTextSize(15);
+
+                if(ucapan.length() > 15 && ucapan.length() < 20){
+                    textUcapan.setTextSize(20);
+                }
+                else if(ucapan.length() > 20){
+                    textUcapan.setTextSize(15);
                 }
                 else
-                    txtUcapan.setTextSize(24);
-                txtUcapan.setText(textucapan);
+                    textUcapan.setTextSize(24);
+
+                textUcapan.setText(ucapan);
                 InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
                 hideSystemUI();
-                containerUcapan.setVisibility(View.GONE);
+                ContainerUcapan.setVisibility(View.GONE);
             }
         });
 
 
 
-        btnLoadImage = (Button) findViewById(R.id.motif_image);
-        textSource = (TextView) findViewById(R.id.sourceuri);
-        imageMotif = (ImageView) findViewById(R.id.iv_image2);
-
-        btnLoadImage.setOnClickListener(new View.OnClickListener() {
-
+        SelectMotifbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View view) {
                 Intent intent = new Intent(
                         Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, RQS_IMAGE1);
             }
         });
-
 
         hueBar = (SeekBar) findViewById(R.id.huebar);
         satBar = (SeekBar) findViewById(R.id.satbar);
@@ -122,6 +296,7 @@ public class Sadum2Activity extends AppCompatActivity {
         hueBar.setOnSeekBarChangeListener(seekBarChangeListener);
         satBar.setOnSeekBarChangeListener(seekBarChangeListener);
         valBar.setOnSeekBarChangeListener(seekBarChangeListener);
+        //Hue end
 
 
         cancelimg.setOnClickListener(new View.OnClickListener() {
@@ -173,19 +348,18 @@ public class Sadum2Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(Sadum2Activity.this);
-                builder.setTitle(R.string.sadum);
+                builder.setTitle("Simpan Desain");
                 //builder.setIcon(R.drawable.ic_cancel);
-                //builder.setIcon(R.drawable.ic_saveicon);
                 builder.setMessage("Anda ingin menyimpan gambar?")
                         .setCancelable(false)
                         .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
-                               containertemplate.setDrawingCacheEnabled(true);
-                               Bitmap myBitmap = containertemplate.getDrawingCache();
-                               startSave(myBitmap);
-                               startActivity(new Intent(Sadum2Activity.this, DashboardActivity.class));
-                               finish();
+                                relativeimages.setDrawingCacheEnabled(true);
+                                Bitmap mybitmap = relativeimages.getDrawingCache();
+                                startSave(mybitmap);
+                                startActivity(new Intent(Sadum2Activity.this, DashboardActivity.class));
+                                finish();
                             }
                         })
                         .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
@@ -198,16 +372,11 @@ public class Sadum2Activity extends AppCompatActivity {
 
             }
         });
+    }
 
 
-
-        //end Of save Image
-
-
-
-    } // end of Oncreate
     public void startSave(Bitmap image){
-        FileOutputStream fout =null;
+        FileOutputStream fout = null;
         File filepath = Environment.getExternalStorageDirectory();
 
         File dirfile = new File(filepath.getAbsoluteFile()+"/DE disimpan/");
@@ -218,12 +387,12 @@ public class Sadum2Activity extends AppCompatActivity {
         String name = "Img"+date+".jpg";
 //        String file_name = filepath.getAbsolutePath()+"/"+name;
         File newFile = new File(dirfile.getAbsolutePath()+"/"+name);
-
         try{
             fout = new FileOutputStream(newFile);
+
             //Bitmap bitmap = viewToBitmap(imgbg,imgbg.getWidth(),imgbg.getHeight());
             image.compress(Bitmap.CompressFormat.JPEG,100,fout);
-            Toast.makeText(this, "Gambar Telah disimpan", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Gambar telah disimpan", Toast.LENGTH_SHORT).show();
             fout.flush();
             fout.close();
 
@@ -245,6 +414,92 @@ public class Sadum2Activity extends AppCompatActivity {
     }
 
 
+    private void initial() {
+
+        imgbg =findViewById(R.id.img_bg);
+        ivImage2 = findViewById(R.id.iv_image2);
+        SelectMotifbtn = findViewById(R.id.motif_image);
+
+        //ivImage3 = findViewById(R.id.iv_image3);
+        relativeimages = findViewById(R.id.containertemplate);
+
+        cancelimg = findViewById(R.id.cancel_imgview);
+        undoimg = findViewById(R.id.undo_imgview);
+        redoimg = findViewById(R.id.redo_imgview);
+        saveimg = findViewById(R.id.save_imgview);
+
+        //ucapan
+        ContainerUcapan = findViewById(R.id.edtucapancontainer);
+        Ucapanbtn = findViewById(R.id.btn_ucapan);
+        edtUcapan = findViewById(R.id.edt_ucapan);
+        ShowUcapanBtn = findViewById(R.id.btnshowucapan);
+        textUcapan = findViewById(R.id.txt_ucapan);
+
+
+    }
+
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+
+        scaleDetector.onTouchEvent(event);
+        rotateGestureDetector.onTouchEvent(event);
+        moveGestureDetector.onTouchEvent(event);
+
+        float scaleImageCenterX =(mImagewidth * mscaleFactor)/6;
+        float scaleImageCenterY =(mImageheight * mscaleFactor)/4;
+
+        matrix.reset();
+        matrix.postScale(mscaleFactor,mscaleFactor);
+        matrix.postRotate(mrotationDegree,scaleImageCenterX,scaleImageCenterY);
+        matrix.postTranslate(mFocusX - scaleImageCenterX, mFocusY - scaleImageCenterY);
+
+        ImageView view = (ImageView)v;
+        view.setImageMatrix(matrix);
+
+        return true;
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        if (fragmentManager.getBackStackEntryCount() > 0 ) {
+            fragmentManager.popBackStack();
+
+            if(btnstatus){
+                findViewById(R.id.layoutsize).setVisibility(View.GONE);
+            }
+            else{
+                findViewById(R.id.layoutsize).setVisibility(View.VISIBLE);
+            }
+        }
+
+        else
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Batalkan dan Keluar");
+            builder.setMessage("Anda yakin ingin keluar dari proses desain dan membatalkan desain?")
+                    .setCancelable(false)
+                    .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+
+        }
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -257,8 +512,10 @@ public class Sadum2Activity extends AppCompatActivity {
                     try {
                         bitmapMaster = BitmapFactory.decodeStream(getContentResolver().openInputStream(source));
 
+                        mImageheight =bitmapMaster.getHeight();
+                        mImagewidth = bitmapMaster.getWidth();
 
-                        // Reset HSV value
+                        //Reset HSV value
                         hueBar.setVisibility(View.VISIBLE);
                         satBar.setVisibility(View.VISIBLE);
                         valBar.setVisibility(View.VISIBLE);
@@ -267,20 +524,26 @@ public class Sadum2Activity extends AppCompatActivity {
                         satBar.setProgress(256);
                         valBar.setProgress(256);
 
-                        loadBitmapHSV();
+                        image = new ImageView(this);
+                        image.setLayoutParams(new LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+                        image.setScaleType(ImageView.ScaleType.MATRIX);
 
+                        image.setOnTouchListener(this);
+
+                        matrix.postScale(mscaleFactor,mscaleFactor);
+                        image.setImageMatrix(matrix);
+
+                        relativeimages.addView(image);
+
+                        loadBitmapHSV();
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
-
-
-
                     break;
             }
         }
     }
-
 
     SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
 
@@ -301,6 +564,8 @@ public class Sadum2Activity extends AppCompatActivity {
         }
     };
 
+
+    @SuppressLint("ClickableViewAccessibility")
     private void loadBitmapHSV() {
         if (bitmapMaster != null) {
 
@@ -311,15 +576,48 @@ public class Sadum2Activity extends AppCompatActivity {
             /*
              * Hue (0 .. 360) Saturation (0...1) Value (0...1)
              */
-
             float hue = (float) progressHue * 360 / 256;
             float sat = (float) progressSat / 256;
             float val = (float) progressVal / 256;
 
-            imageMotif.setImageBitmap(updateHSV(bitmapMaster, hue, sat, val));
+            image.setImageBitmap(updateHSV(bitmapMaster, hue, sat, val));
 
         }
     }
+
+    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+            mscaleFactor*= detector.getScaleFactor();
+            mscaleFactor = Math.max(0.1f, Math.min(mscaleFactor, 1.0f));
+            return true;
+        }
+    }
+
+    private class RotateListener extends RotateGestureDetector.SimpleOnRotateGestureListener{
+
+        @Override
+        public boolean onRotate(RotateGestureDetector detector){
+            mrotationDegree -=detector.getRotationDegreesDelta();
+            return true;
+        }
+
+    }
+
+    private class MoveListener extends MoveGestureDetector.SimpleOnMoveGestureListener{
+
+        @Override
+        public boolean onMove(MoveGestureDetector detector){
+            PointF d = detector.getFocusDelta();
+            mFocusX +=d.x;
+            mFocusY += d.y;
+
+            return true;
+
+        }
+    }
+
+
 
 
     private Bitmap updateHSV(Bitmap src, float settingHue, float settingSat,
@@ -365,7 +663,6 @@ public class Sadum2Activity extends AppCompatActivity {
 
                 // Convert back from HSV to Color
                 mapDestColor[index] = Color.HSVToColor(pixelHSV);
-
                 index++;
             }
         }
@@ -375,124 +672,7 @@ public class Sadum2Activity extends AppCompatActivity {
     }
 
 
-
-    public void touchAndDrag(){
-        ivImage2.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); ivImage2.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview6.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview6.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview7.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview7.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview8.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview8.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview9.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview9.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview10.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview10.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview11.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview11.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview12.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview12.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview13.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview13.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview14.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview14.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview15.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview15.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-        imgview16.setOnTouchListener(new Sadum2Activity.ChoiceTouchListener()); imgview16.setOnDragListener(new Sadum2Activity.ChoiceDragListener());
-
-    }
-
-    private void initial() {
-
-        imgbg =findViewById(R.id.img_bg);
-        ivImage2 = findViewById(R.id.iv_image2);
-        //ivImage3 = findViewById(R.id.iv_image3);
-        imgview6 = findViewById(R.id.imageView6);
-        imgview7 = findViewById(R.id.imageView7);
-        imgview8 = findViewById(R.id.imageView8);
-        imgview9 = findViewById(R.id.imageView9);
-        imgview10 = findViewById(R.id.imageView10);
-        imgview11 = findViewById(R.id.imageView11);
-        imgview12 = findViewById(R.id.imageView12);
-        imgview13 = findViewById(R.id.imageView13);
-        imgview14 = findViewById(R.id.imageView14);
-        imgview15 = findViewById(R.id.imageView15);
-        imgview16 = findViewById(R.id.imageView16);
-
-        cancelimg = findViewById(R.id.cancel_imgview);
-        undoimg = findViewById(R.id.undo_imgview);
-        redoimg = findViewById(R.id.redo_imgview);
-        saveimg = findViewById(R.id.save_imgview);
-
-
-        //Ucapan
-        txtUcapan = findViewById(R.id.txt_ucapan);
-        Ucapanbtn = findViewById(R.id.btn_ucapan);
-        edtUcapan = findViewById(R.id.edt_ucapan);
-        showEdtUcapan = findViewById(R.id.btnshowucapan);
-        containerUcapan = findViewById(R.id.edtucapancontainer);
-
-        //Container template
-        containertemplate = findViewById(R.id.containertemplatesadum2);
-
-    }
-
-
-    private class ChoiceDragListener implements View.OnDragListener{
-
-        @Override
-        public boolean onDrag(View view, DragEvent dragEvent) {
-
-            switch (dragEvent.getAction()){
-                case DragEvent.ACTION_DRAG_STARTED:
-
-                    //Saat gambar di drag
-                    btnLoadImage.setVisibility(View.GONE);
-                    hueBar.setVisibility(View.GONE);
-                    satBar.setVisibility(View.GONE);
-                    valBar.setVisibility(View.GONE);
-                    cancelimg.setVisibility(View.GONE);
-                    redoimg.setVisibility(View.GONE);
-                    undoimg.setVisibility(View.GONE);
-                    saveimg.setVisibility(View.GONE);
-                    imageMotif.setVisibility(View.GONE);
-
-                    break;
-                case DragEvent.ACTION_DRAG_ENTERED:
-                    break;
-                case DragEvent.ACTION_DRAG_EXITED:
-                    break;
-                case DragEvent.ACTION_DROP:
-                    ImageView v = (ImageView) dragEvent.getLocalState();
-                    ((ImageView)view).setImageDrawable(ivImage2.getDrawable());
-                    //((ImageView)v).setImageDrawable(null);
-                    break;
-                case DragEvent.ACTION_DRAG_ENDED:
-                    btnLoadImage.setVisibility(View.VISIBLE);
-                    hueBar.setVisibility(View.VISIBLE);
-                    satBar.setVisibility(View.VISIBLE);
-                    valBar.setVisibility(View.VISIBLE);
-                    cancelimg.setVisibility(View.VISIBLE);
-                    redoimg.setVisibility(View.VISIBLE);
-                    undoimg.setVisibility(View.VISIBLE);
-                    saveimg.setVisibility(View.VISIBLE);
-                    imageMotif.setVisibility(View.VISIBLE);
-
-                    break;
-            }
-            return true;
-        }
-    }
-
-    public final class ChoiceTouchListener implements View.OnTouchListener {
-
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-
-            if ((motionEvent.getAction() == motionEvent.ACTION_DOWN) && ((ImageView) view).getDrawable() != null) {
-                ClipData clipData = ClipData.newPlainText("", "");
-                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-                view.startDrag(clipData, shadowBuilder, view, 0);
-                return true;
-            } else {
-                // Disinilah event change color muncul.
-                //Toast.makeText(SadumActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        }
-    }
-
-
+    //Menampilkan notifikasi window...
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -529,38 +709,6 @@ public class Sadum2Activity extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-    }
-
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            exitByBackKey();
-            //moveTaskToBack(false);
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    //Saat force back ditekan
-    protected void exitByBackKey() {
-
-        AlertDialog alertbox = new AlertDialog.Builder(this)
-                .setMessage("Anda ingin keluar dan membatalkan desain?")
-                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-
-                    // do something when the button is clicked
-                    public void onClick(DialogInterface arg0, int arg1) {
-
-                        finish();
-                        //close();
-                    }
-                })
-                .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-
-                    // do something when the button is clicked
-                    public void onClick(DialogInterface arg0, int arg1) {
-                    }
-                })
-                .show();
     }
 
 }

@@ -18,7 +18,8 @@ import com.asksira.imagepickersheetdemo.activity.Sadum1Activity;
 
 public class FragmentCustomSize extends Fragment {
 
-    EditText heightsisi,widthsisi,heighttgh,widthtgh;
+    EditText heightsisi,widthsisi;
+    EditText tinggictr,lebarctr;
     Button selesai;
     private View v;
 
@@ -31,6 +32,8 @@ public class FragmentCustomSize extends Fragment {
         v = inflater.inflate(R.layout.fragment_custom_size,container,false);
         heightsisi = v.findViewById(R.id.heightsizeid);
         widthsisi = v.findViewById(R.id.widthsizeid);
+        tinggictr = v.findViewById(R.id.tinggitengah);
+        lebarctr =v.findViewById(R.id.lebartengah);
 
 
         selesai = v.findViewById(R.id.btnselesai);
@@ -40,21 +43,23 @@ public class FragmentCustomSize extends Fragment {
             public void onClick(View v) {
                 String hs = heightsisi.getText().toString();
                 String ws = widthsisi.getText().toString();
+                String ht = tinggictr.getText().toString();
+                String wt = lebarctr.getText().toString();
 
-                if (TextUtils.isEmpty(heightsisi.getText()) && TextUtils.isEmpty(widthsisi.getText())) {
+                if (TextUtils.isEmpty(heightsisi.getText()) && TextUtils.isEmpty(widthsisi.getText()) && TextUtils.isEmpty(lebarctr.getText()) && TextUtils.isEmpty(tinggictr.getText())) {
                     heightsisi.setError("Required");
                     widthsisi.setError("Required");
+                    tinggictr.setError("Required");
+                    lebarctr.setError("Required");
 
-                } else {
+                }
+                else {
                     CustomActivity rg = (CustomActivity) getActivity();
-                    rg.fsize(hs, ws);
+                    rg.fsize(hs, ws,ht,wt);
                     rg.onBackPressed();
                 }
-
             }
         });
-
-
         return v;
     }
 }

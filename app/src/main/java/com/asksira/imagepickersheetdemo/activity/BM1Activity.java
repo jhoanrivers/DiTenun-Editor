@@ -79,7 +79,6 @@ public class BM1Activity extends AppCompatActivity{
             }
         });
 
-
         //Onclick Listener
         findViewById(R.id.motif_image).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -299,7 +298,6 @@ public class BM1Activity extends AppCompatActivity{
         imgview14.setOnTouchListener(new ChoiceTouchListener()); imgview14.setOnDragListener(new ChoiceDragListener());
         imgview15.setOnTouchListener(new ChoiceTouchListener()); imgview15.setOnDragListener(new ChoiceDragListener());
         imgview16.setOnTouchListener(new ChoiceTouchListener()); imgview16.setOnDragListener(new ChoiceDragListener());
-
     }
 
     private void initial() {

@@ -124,8 +124,6 @@
         </LinearLayout>
     </RelativeLayout>
 
-
-
     <ScrollView
         android:id="@+id/bgColor"
         android:layout_width="40dp"
@@ -176,6 +174,14 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/color_palete_yellow" />
+
+
+            <Button
+                android:id="@+id/btnBlack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_black" />
 
         </LinearLayout>
     </ScrollView>

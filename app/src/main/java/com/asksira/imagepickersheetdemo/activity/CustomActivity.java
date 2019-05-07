@@ -68,7 +68,7 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
     private MoveGestureDetector moveGestureDetector;
 
     ImageView image;
-    RelativeLayout relativeimages;
+    RelativeLayout containerTemplate,containerTemplateCenter;
 
 
     @Override
@@ -83,6 +83,128 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         mScreenHeight = displayMetrics.heightPixels;
         mScreenWidth = displayMetrics.widthPixels;
+
+        //Chooose color for Background
+        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplate).setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplate).setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplate).setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplate).setBackgroundResource(R.color.blueberry);
+            }
+        });
+
+        findViewById(R.id.btnYellow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplate).setBackgroundResource(R.color.yellow);
+            }
+        });
+
+        findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplate).setBackgroundResource(R.color.black);
+            }
+        });
+
+        //Center Edit
+        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                containerTemplate.setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                containerTemplate.setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                containerTemplate.setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                containerTemplate.setBackgroundResource(R.color.blueberry);
+            }
+        });
+
+        findViewById(R.id.btnYellow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                containerTemplate.setBackgroundResource(R.color.yellow);
+            }
+        });
+
+        findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                containerTemplate.setBackgroundResource(R.color.black);
+            }
+        });
+
+        //Edit Color center background
+        findViewById(R.id.btnDarkRedCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplatecenter).setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRedCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplatecenter).setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreenCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplatecenter).setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlueCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplatecenter).setBackgroundResource(R.color.blueberry);
+            }
+        });
+
+        findViewById(R.id.btnYellowCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplatecenter).setBackgroundResource(R.color.yellow);
+            }
+        });
+
+        findViewById(R.id.btnBlackCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containertemplatecenter).setBackgroundResource(R.color.black);
+            }
+        });
+        // end of color template
+
 
 
         //Ontouch
@@ -188,8 +310,8 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
                         .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
-                                relativeimages.setDrawingCacheEnabled(true);
-                                Bitmap mybitmap = relativeimages.getDrawingCache();
+                                containerTemplate.setDrawingCacheEnabled(true);
+                                Bitmap mybitmap = containerTemplate.getDrawingCache();
                                 startSave(mybitmap);
                                 startActivity(new Intent(CustomActivity.this, DashboardActivity.class));
                                 finish();
@@ -277,21 +399,54 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
         SetSizebtn = findViewById(R.id.btnsettem);
 
 
+        //template size
+        containerTemplate = findViewById(R.id.containertemplate);
+        containerTemplateCenter = findViewById(R.id.containertemplatecenter);
+
+
     }
 
-    public void fsize(String hs, String ws) {
+    public void fsize(String hs, String ws, String ht, String wt) {
         btnstatus = true;
 
         int h = Integer.parseInt(hs);
         int w = Integer.parseInt(ws);
+        int hh= Integer.parseInt(ht);
+        int ww = Integer.parseInt(wt);
 
         //Relative layout untuk image template
-        relativeimages = (RelativeLayout) findViewById(R.id.containertemplate);
 
-        relativeimages.getLayoutParams().height = (int) h * 6;
-        relativeimages.getLayoutParams().width = (int) w * 8;
-        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) relativeimages.getLayoutParams();
+
+
+        //container template size and color
+
+
+//        RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(h*5,w*5);
+//        parms.addRule(RelativeLayout.CENTER_IN_PARENT);
+//        containerTemplate.setLayoutParams(parms);
+//        containerTemplate.setBackgroundResource(R.color.green);
+//
+//        RelativeLayout.LayoutParams parms2 = new RelativeLayout.LayoutParams(hh*5,ww*5);
+//        parms.addRule(RelativeLayout.CENTER_IN_PARENT);
+//        containerTemplateCenter.setLayoutParams(parms2);
+//        containerTemplateCenter.setBackgroundResource(R.color.BloodkRed);
+
+
+
+        //container template center
+
+        containerTemplate.getLayoutParams().height = h * 5;
+        containerTemplate.getLayoutParams().width = w * 5;
+        containerTemplate.setBackgroundResource(R.color.black);
+
+        containerTemplateCenter.getLayoutParams().height =  hh * 5;
+        containerTemplateCenter.getLayoutParams().width = ww * 5;
+        containerTemplateCenter.setBackgroundResource(R.color.black);
+
+        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) containerTemplate.getLayoutParams();
+        RelativeLayout.LayoutParams lpt = (RelativeLayout.LayoutParams) containerTemplateCenter.getLayoutParams();
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
+        lpt.addRule(RelativeLayout.CENTER_IN_PARENT);
 
         //sembunyikan notifbar
         hideSystemUI();
@@ -398,7 +553,7 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
                         matrix.postScale(mscaleFactor,mscaleFactor);
                         image.setImageMatrix(matrix);
 
-                        relativeimages.addView(image);
+                        containerTemplate.addView(image);
 
                         loadBitmapHSV();
 

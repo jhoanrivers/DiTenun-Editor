@@ -114,10 +114,14 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
             }
         });
 
+        findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeimages.setBackgroundResource(R.color.black);
+            }
+        });
+
         //end of choose background color
-
-
-
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         mScreenHeight = displayMetrics.heightPixels;
@@ -618,9 +622,6 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
-
-
-
 
 
 }
