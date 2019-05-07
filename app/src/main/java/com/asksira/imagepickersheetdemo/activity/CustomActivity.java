@@ -21,6 +21,7 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -69,6 +70,7 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
 
     ImageView image;
     RelativeLayout containerTemplate,containerTemplateCenter;
+    EditText kataUcapan;
 
 
     @Override
@@ -206,6 +208,15 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
         // end of color template
 
 
+
+
+        //button text onClick
+//        findViewById(R.id.btnshowucapan).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                kataUcapan = new EditText();
+//            }
+//        });
 
         //Ontouch
         //ivImage2.setOnTouchListener(this);

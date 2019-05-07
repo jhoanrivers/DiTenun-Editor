@@ -231,6 +231,7 @@ public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchLi
             public void onClick(View view) {
                 ContainerUcapan.setVisibility(View.VISIBLE);
                 btnstatus= true;
+                edtUcapan.requestFocus();
                 InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,0);
             }
@@ -241,6 +242,7 @@ public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchLi
             public void onClick(View v) {
                 ContainerUcapan.setVisibility(View.VISIBLE);
                 btnstatus= true;
+                edtUcapan.requestFocus();
                 InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,0);
             }
