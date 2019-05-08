@@ -1,5 +1,6 @@
 package com.asksira.imagepickersheetdemo.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,22 +25,55 @@ import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.asksira.imagepickersheetdemo.App;
+import com.asksira.imagepickersheetdemo.FileUtils;
+import com.asksira.imagepickersheetdemo.Model.APIModule;
+import com.asksira.imagepickersheetdemo.Model.Kristik;
 import com.asksira.imagepickersheetdemo.R;
 import com.asksira.imagepickersheetdemo.adapter.PhotoAdapter;
+import com.asksira.imagepickersheetdemo.network.TenunNetworkInterface;
+import com.asksira.imagepickersheetdemo.remote.FileService;
+import com.asksira.imagepickersheetdemo.util.BitmapUtils;
+import com.asksira.imagepickersheetdemo.view.KristikDrawable;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javax.inject.Inject;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import io.realm.Realm;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.http.Multipart;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class SpecificSingleImage extends AppCompatActivity {
 
 
+    @BindView(R.id.progress_bar)
+    public ProgressBar progressBar;
+
+    @Inject
+    TenunNetworkInterface tenunNetworkInterface;
+
+    @Inject
+    Realm realm;
+
+
+    FileService fileService;
     TextView text;
     ImageView imageview;
     boolean status = false;
@@ -48,16 +82,24 @@ public class SpecificSingleImage extends AppCompatActivity {
     int position;
     PhotoViewAttacher mAtacher;
 
+    private byte[] motifBytes;
+    private Bitmap kristikBitmap;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specific_single_image);
 
+        App.get(getApplicationContext()).getInjector().inject(this);
+
+        ButterKnife.bind(this);
+        progressBar.setVisibility(View.GONE);
+
         //showing back button in the toolbar
         assert getSupportActionBar() != null;   //null check
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
 
         // Retrieve data from MainActivity on GridView item click
@@ -65,7 +107,6 @@ public class SpecificSingleImage extends AppCompatActivity {
         position = i.getExtras().getInt("position");
         filepath = i.getStringArrayExtra("filepath");
         filename = i.getStringArrayExtra("filename");
-
         getSupportActionBar().setTitle(filename[position]);
 
         //above API 23
@@ -75,25 +116,44 @@ public class SpecificSingleImage extends AppCompatActivity {
         imageview = (ImageView) findViewById(R.id.image);
         mAtacher = new PhotoViewAttacher(imageview);
 
+        //change filepath target menjadi gambar bitmap
         Bitmap bmp = BitmapFactory.decodeFile(filepath[position]);
+
+        motifBytes = convertBitmapToByteArray(bmp);
+
         imageview.setImageBitmap(bmp);
 
         ContextCompat.getColor(this, R.color.white);
 
     }
 
+    public byte[] convertBitmapToByteArray( Bitmap bitmap) {
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream(bitmap.getWidth() * bitmap.getHeight());
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, buffer);
+        return buffer.toByteArray();
+    }
+
+    private void showLoading() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideLoading() {
+        progressBar.setVisibility(View.GONE);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.spesific_image_menu, menu);
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.ubahkristik:
-                Toast.makeText(SpecificSingleImage.this, "Ubah Kristik Pressed", Toast.LENGTH_SHORT).show();
+                generateKristik();
                 return true;
             case R.id.share:
                 //Toast.makeText(SpecificSingleImage.this, "Ubah Kristik Pressed", Toast.LENGTH_SHORT).show();
@@ -111,6 +171,45 @@ public class SpecificSingleImage extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    private void showKristikPreview(Bitmap bitmap) {
+        imageview.setImageBitmap(bitmap);
+    }
+
+
+    private void generateKristik() {
+        int kristikSize = 2;
+        int colorSize = 50;
+        requestKristikFromServer(kristikSize, colorSize, motifBytes);
+        showLoading();
+    }
+    private void requestKristikFromServer(int squareSize, int colorAmount, byte[] motifBytes) {
+        RequestBody photoBody = RequestBody.create(MediaType.parse("image/*"), motifBytes);
+        MultipartBody.Part photoPart = MultipartBody.Part.createFormData("img_file", "motif.jpg", photoBody);
+
+        tenunNetworkInterface.kristikEditor(APIModule.ACCESS_TOKEN_TEMP, squareSize, colorAmount, photoPart).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(SpecificSingleImage.this, "Berhasil Digenerate", Toast.LENGTH_SHORT).show();
+                    kristikBitmap = BitmapFactory.decodeStream(response.body().byteStream());
+                    Bitmap showableKristik = BitmapUtils.drawableToBitmap(new KristikDrawable(kristikBitmap));
+                    showKristikPreview(showableKristik);
+                }
+
+                hideLoading();
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+                hideLoading();
+            }
+        });
+    }
+
+
+
 
     @Override
     public boolean onSupportNavigateUp(){

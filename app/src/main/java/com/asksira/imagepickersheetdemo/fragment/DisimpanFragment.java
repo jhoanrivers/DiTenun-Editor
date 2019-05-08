@@ -2,6 +2,7 @@ package com.asksira.imagepickersheetdemo.fragment;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -78,10 +79,12 @@ public class DisimpanFragment extends Fragment {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                    Uri imageUri = Uri.parse("android.resource://com.asksira.imagepickersheetdemo/"+adapter.getItem(i));
                     Intent intent = new Intent(getActivity(), SpecificSingleImage.class);
                     intent.putExtra("filepath",FilePathStrings);
                     intent.putExtra("filename",FileNameStrings);
                     intent.putExtra("position",i);
+                    intent.putExtra("uriimg",imageUri.toString());
 
                     startActivity(intent);
                 }

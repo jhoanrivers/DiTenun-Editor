@@ -16,9 +16,49 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8 //lambda ftw
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+}
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+        jcenter()
+        google()
+        maven { url "http://oss.sonatype.org/content/groups/public" }
+        maven { url "https://maven.google.com" }
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-rc1'
+    }
 }
 
+
 apply plugin: 'realm-android'
+apply plugin: 'com.jakewharton.butterknife'
+
+
+def daggerVersion = '1.2.2'
+def okHttpVersion = '3.4.1'
+def retrofit2Version = '2.4.0'
+def rxJavaVersion = '1.1.3'
+def rxAndroidVersion = '1.1.0'
+def gsonVersion = '2.7'
+def iconifyVersion = '2.2.2'
+def subSamplingImageLibVersion = '3.5.0'
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -40,16 +80,44 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:support-v13:28.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
-
     implementation 'com.jmedeisis:draglinearlayout:1.1.0'
     implementation 'com.github.xdtianyu:ColorPicker:v0.0.4'
 
-    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava:2.4.0"
+
     implementation 'io.realm:android-adapters:3.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
+
+    implementation group: 'com.google.code.gson', name: 'gson', version: "$gsonVersion"
+    implementation "io.reactivex:rxjava:$rxJavaVersion"
+    implementation "io.reactivex:rxandroid:$rxAndroidVersion"
+    implementation "com.joanzapata.iconify:android-iconify-fontawesome:$iconifyVersion"
+    implementation "com.joanzapata.iconify:android-iconify-typicons:$iconifyVersion"
+    implementation "com.joanzapata.iconify:android-iconify-ionicons:$iconifyVersion"
+    implementation "com.davemorrissey.labs:subsampling-scale-image-view:$subSamplingImageLibVersion"
+    implementation 'com.jakewharton.timber:timber:4.3.0'
+    implementation 'jp.wasabeef:recyclerview-animators:2.2.4'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+
+    implementation 'com.squareup.dagger:dagger:1.2.2'
+    annotationProcessor 'com.squareup.dagger:dagger-compiler:1.2.2'
+
+    implementation "org.apache.httpcomponents:httpmime:4.2.3"
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation('org.apache.httpcomponents:httpcore:4.+') {
+        exclude module: 'httpclient'
+    }
 
 
     implementation project(':bsimagepicker')
     implementation project(path: ':simplecolorpicker')
+
 }
