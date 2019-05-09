@@ -30,6 +30,16 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true" />
 
+        <Button
+            android:id="@+id/btnsavekristik"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/ic_iconfinder_icon"
+            />
+
     </RelativeLayout>
 
 

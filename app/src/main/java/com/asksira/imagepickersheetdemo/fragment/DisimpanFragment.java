@@ -32,14 +32,10 @@ public class DisimpanFragment extends Fragment {
     File file;
 
 
-    GridView gridView;
-    PhotoAdapter grisViewCustomeAdapter;
-
 
     public DisimpanFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
@@ -93,15 +89,7 @@ public class DisimpanFragment extends Fragment {
         }
 
             if(file.isDirectory()){
-
-
             }
-
-
-
-
-
-
         return view;
     }
 

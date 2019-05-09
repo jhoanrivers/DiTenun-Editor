@@ -42,8 +42,11 @@ import com.asksira.imagepickersheetdemo.view.KristikDrawable;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.inject.Inject;
 
@@ -65,6 +68,9 @@ public class SpecificSingleImage extends AppCompatActivity {
 
     @BindView(R.id.progress_bar)
     public ProgressBar progressBar;
+
+    @BindView(R.id.btnsavekristik)
+    public Button buttonSave;
 
     @Inject
     TenunNetworkInterface tenunNetworkInterface;
@@ -96,6 +102,7 @@ public class SpecificSingleImage extends AppCompatActivity {
 
         ButterKnife.bind(this);
         progressBar.setVisibility(View.GONE);
+        buttonSave.setVisibility(View.GONE);
 
         //showing back button in the toolbar
         assert getSupportActionBar() != null;   //null check
@@ -125,7 +132,57 @@ public class SpecificSingleImage extends AppCompatActivity {
 
         ContextCompat.getColor(this, R.color.white);
 
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveImage(kristikBitmap);
+            }
+        });
+
     }
+
+    private void saveImage(Bitmap kristikBitmap) {
+
+        FileOutputStream fout = null;
+        File filepath = Environment.getExternalStorageDirectory();
+
+        File dirfile = new File(filepath.getAbsoluteFile()+"/DE kristik/");
+        dirfile.mkdirs();
+
+        if(!dirfile.exists() && !dirfile.mkdirs()){
+            Toast.makeText(this, "No directory", Toast.LENGTH_SHORT).show();
+        }
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyymmsshhmmss");
+        String date = simpleDateFormat.format(new Date());
+        String name = "Kristik"+date+".jpg";
+//        String file_name = filepath.getAbsolutePath()+"/"+name;
+        File newFile = new File(dirfile.getAbsolutePath()+"/"+name);
+        try{
+            fout = new FileOutputStream(newFile);
+            //Bitmap bitmap = viewToBitmap(imgbg,imgbg.getWidth(),imgbg.getHeight());
+            kristikBitmap.compress(Bitmap.CompressFormat.JPEG,100,fout);
+            Toast.makeText(this, "Gambar telah disimpan", Toast.LENGTH_SHORT).show();
+            fout.flush();
+            fout.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        refreshGallery(newFile);
+
+
+    }
+
+    private void refreshGallery(File newFile) {
+        Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        intent.setData(Uri.fromFile(newFile));
+        sendBroadcast(intent);
+    }
+
 
     public byte[] convertBitmapToByteArray( Bitmap bitmap) {
         ByteArrayOutputStream buffer = new ByteArrayOutputStream(bitmap.getWidth() * bitmap.getHeight());
@@ -154,6 +211,7 @@ public class SpecificSingleImage extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.ubahkristik:
                 generateKristik();
+                buttonSave.setVisibility(View.VISIBLE);
                 return true;
             case R.id.share:
                 //Toast.makeText(SpecificSingleImage.this, "Ubah Kristik Pressed", Toast.LENGTH_SHORT).show();
@@ -176,9 +234,10 @@ public class SpecificSingleImage extends AppCompatActivity {
     }
 
 
+
     private void generateKristik() {
-        int kristikSize = 2;
-        int colorSize = 50;
+        int kristikSize = 1;
+        int colorSize = 100;
         requestKristikFromServer(kristikSize, colorSize, motifBytes);
         showLoading();
     }
@@ -190,10 +249,10 @@ public class SpecificSingleImage extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(SpecificSingleImage.this, "Berhasil Digenerate", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(SpecificSingleImage.this, "Berhasil Digenerate", Toast.LENGTH_SHORT).show();
                     kristikBitmap = BitmapFactory.decodeStream(response.body().byteStream());
-                    Bitmap showableKristik = BitmapUtils.drawableToBitmap(new KristikDrawable(kristikBitmap));
-                    showKristikPreview(showableKristik);
+                    imageview.setImageBitmap(kristikBitmap);
+
                 }
 
                 hideLoading();
@@ -207,6 +266,8 @@ public class SpecificSingleImage extends AppCompatActivity {
             }
         });
     }
+
+
 
 
 
