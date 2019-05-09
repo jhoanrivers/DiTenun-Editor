@@ -201,7 +201,7 @@ public class SpecificSingleImage extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SpecificSingleImage.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
                 hideLoading();
             }

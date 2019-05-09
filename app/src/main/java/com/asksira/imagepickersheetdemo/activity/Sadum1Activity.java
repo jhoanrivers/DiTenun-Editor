@@ -68,7 +68,7 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
     private MoveGestureDetector moveGestureDetector;
 
     ImageView image;
-    RelativeLayout relativeimages,ContainerUcapan;
+    RelativeLayout relativeimages,ContainerUcapan,containerCenter;
 
 
     @Override
@@ -120,6 +120,52 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
                 relativeimages.setBackgroundResource(R.color.black);
             }
         });
+
+
+
+        //container center background color
+
+        findViewById(R.id.btnDarkRedCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRedCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreenCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlueCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.blueberry);
+            }
+        });
+
+        findViewById(R.id.btnYellowCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.yellow);
+            }
+        });
+
+        findViewById(R.id.btnBlackCenter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.containerCenter).setBackgroundResource(R.color.black);
+            }
+        });
+
+
+
 
         //end of choose background color
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -348,6 +394,7 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
         edtUcapan = findViewById(R.id.edt_ucapan);
         ShowUcapanBtn = findViewById(R.id.btnshowucapan);
         textUcapan = findViewById(R.id.txt_ucapan);
+        containerCenter = findViewById(R.id.containerCenter);
 
 
     }

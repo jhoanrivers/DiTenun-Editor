@@ -30,11 +30,12 @@ public class Kristik extends RealmObject {
         this.name = name;
     }
 
-    public byte[] getBytes(){
+    public byte[] getBytes() {
         return bytes;
     }
-    public void setBytes(byte[] bytes){
-        this.bytes=bytes;
+
+    public void setBytes(byte[] bytes) {
+        this.bytes = bytes;
     }
 
 }
