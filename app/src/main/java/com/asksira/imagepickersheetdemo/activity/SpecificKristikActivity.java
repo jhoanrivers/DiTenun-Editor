@@ -25,13 +25,10 @@ public class SpecificKristikActivity extends AppCompatActivity {
     int position;
     PhotoViewAttacher mAtacher;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specific_kristik);
-
 
         assert getSupportActionBar() != null;   //null check
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -43,9 +40,9 @@ public class SpecificKristikActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(filename[position]);
 
 
-        text = (TextView) findViewById(R.id.text);
+        text = findViewById(R.id.text);
         text.setText(filename[position]);
-        imageview = (ImageView) findViewById(R.id.image);
+        imageview =findViewById(R.id.image);
         mAtacher = new PhotoViewAttacher(imageview);
 
         //change filepath target menjadi gambar bitmap
@@ -62,4 +59,12 @@ public class SpecificKristikActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.spesific_image_menu, menu);
         return true;
     }
+
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
+
 }

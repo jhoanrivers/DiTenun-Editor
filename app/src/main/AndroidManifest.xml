@@ -9,14 +9,15 @@
 
     <application
         android:name=".App"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
 
-        <activity android:name=".activity.SpecificKristikActivity"
-            android:theme="@style/AppTheme"></activity>
+
         <activity
             android:name=".activity.SadumFlexible"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -26,7 +27,10 @@
         <activity android:name=".activity.ChangeImageColor" />
         <activity
             android:name=".activity.SpecificSingleImage"
-            android:theme="@style/AppTheme" /> <!-- <activity -->
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.SpecificKristikActivity"
+            android:theme="@style/AppTheme"></activity>
+        <!-- <activity -->
         <!-- android:name=".activity.HomeActivity" -->
         <!-- android:label="@string/title_activity_home"></activity> -->
         <activity

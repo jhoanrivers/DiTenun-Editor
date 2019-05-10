@@ -132,36 +132,36 @@ public class SpecificSingleImage extends AppCompatActivity {
 
         ContextCompat.getColor(this, R.color.white);
 
+
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveImage(kristikBitmap);
+                Intent intent = new Intent(SpecificSingleImage.this,DashboardActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
     }
 
-    private void saveImage(Bitmap kristikBitmap) {
-
+    public void saveImage(Bitmap image){
         FileOutputStream fout = null;
         File filepath = Environment.getExternalStorageDirectory();
 
         File dirfile = new File(filepath.getAbsoluteFile()+"/DE kristik/");
         dirfile.mkdirs();
 
-        if(!dirfile.exists() && !dirfile.mkdirs()){
-            Toast.makeText(this, "No directory", Toast.LENGTH_SHORT).show();
-        }
-
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyymmsshhmmss");
         String date = simpleDateFormat.format(new Date());
-        String name = "Kristik"+date+".jpg";
+        String name = "kristik"+date+".jpg";
 //        String file_name = filepath.getAbsolutePath()+"/"+name;
         File newFile = new File(dirfile.getAbsolutePath()+"/"+name);
         try{
             fout = new FileOutputStream(newFile);
+
             //Bitmap bitmap = viewToBitmap(imgbg,imgbg.getWidth(),imgbg.getHeight());
-            kristikBitmap.compress(Bitmap.CompressFormat.JPEG,100,fout);
+            image.compress(Bitmap.CompressFormat.JPEG,100,fout);
             Toast.makeText(this, "Gambar telah disimpan", Toast.LENGTH_SHORT).show();
             fout.flush();
             fout.close();
@@ -173,16 +173,14 @@ public class SpecificSingleImage extends AppCompatActivity {
         }
 
         refreshGallery(newFile);
-
-
     }
 
-    private void refreshGallery(File newFile) {
+    // Untuk merefresh gallery setelah gambar disimpan
+    public void refreshGallery(File file){
         Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        intent.setData(Uri.fromFile(newFile));
+        intent.setData(Uri.fromFile(file));
         sendBroadcast(intent);
     }
-
 
     public byte[] convertBitmapToByteArray( Bitmap bitmap) {
         ByteArrayOutputStream buffer = new ByteArrayOutputStream(bitmap.getWidth() * bitmap.getHeight());
@@ -211,7 +209,7 @@ public class SpecificSingleImage extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.ubahkristik:
                 generateKristik();
-                buttonSave.setVisibility(View.VISIBLE);
+
                 return true;
             case R.id.share:
                 //Toast.makeText(SpecificSingleImage.this, "Ubah Kristik Pressed", Toast.LENGTH_SHORT).show();
@@ -234,7 +232,6 @@ public class SpecificSingleImage extends AppCompatActivity {
     }
 
 
-
     private void generateKristik() {
         int kristikSize = 1;
         int colorSize = 100;
@@ -249,13 +246,15 @@ public class SpecificSingleImage extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    //Toast.makeText(SpecificSingleImage.this, "Berhasil Digenerate", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SpecificSingleImage.this, "Berhasil Digenerate", Toast.LENGTH_SHORT).show();
                     kristikBitmap = BitmapFactory.decodeStream(response.body().byteStream());
                     imageview.setImageBitmap(kristikBitmap);
+
 
                 }
 
                 hideLoading();
+                buttonSave.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -266,8 +265,6 @@ public class SpecificSingleImage extends AppCompatActivity {
             }
         });
     }
-
-
 
 
 
