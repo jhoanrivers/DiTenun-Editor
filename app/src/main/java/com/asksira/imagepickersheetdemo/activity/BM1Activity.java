@@ -163,35 +163,9 @@ public class BM1Activity extends AppCompatActivity{
                         .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
-                                imgbg.buildDrawingCache();
-                                imgview6.buildDrawingCache();
-                                imgview7.buildDrawingCache();
-                                imgview8.buildDrawingCache();
-                                imgview9.buildDrawingCache();
-                                imgview10.buildDrawingCache();
-                                imgview11.buildDrawingCache();
-                                imgview12.buildDrawingCache();
-                                imgview13.buildDrawingCache();
-                                imgview14.buildDrawingCache();
-                                imgview15.buildDrawingCache();
-                                imgview16.buildDrawingCache();
-
-                                Bitmap imagebg = imgbg.getDrawingCache();
-                                Bitmap image6= imgview6.getDrawingCache();
-                                Bitmap image7 = imgview7.getDrawingCache();
-                                Bitmap image8 = imgview8.getDrawingCache();
-                                Bitmap image9 = imgview9.getDrawingCache();
-                                Bitmap image10 = imgview10.getDrawingCache();
-                                Bitmap image11 = imgview11.getDrawingCache();
-                                Bitmap image12 = imgview12.getDrawingCache();
-                                Bitmap image13 = imgview13.getDrawingCache();
-                                Bitmap image14 = imgview14.getDrawingCache();
-                                Bitmap image15 = imgview15.getDrawingCache();
-                                Bitmap image16 = imgview16.getDrawingCache();
-
-                                Bitmap mergeAllImage= (Bitmap) createSingleImageFromMultipleImage(imagebg,image6,image7,image8,image9,image10,image11,image12,image13,image14,image15,image16);
-
-                                startSave(mergeAllImage);
+                               containerBM.setDrawingCacheEnabled(true);
+                               Bitmap myBitmap = containerBM.getDrawingCache();
+                                startSave(myBitmap);
 
                                 //startSave();
                                 startActivity(new Intent(BM1Activity.this, DashboardActivity.class));
@@ -211,43 +185,19 @@ public class BM1Activity extends AppCompatActivity{
 
     }
 
-    //Convert All image to be 1 image
-    private Bitmap createSingleImageFromMultipleImage(Bitmap imagebg, Bitmap image6, Bitmap image7, Bitmap image8, Bitmap image9, Bitmap image10, Bitmap image11, Bitmap image12, Bitmap image13, Bitmap image14, Bitmap image15, Bitmap image16) {
-
-        Bitmap result = Bitmap.createBitmap(imagebg.getWidth(),imagebg.getHeight(),imagebg.getConfig());
-        Canvas canvas= new Canvas(result);
-        canvas.drawBitmap(imagebg,0,0,null);
-        canvas.drawBitmap(image6,50,55,null);
-        canvas.drawBitmap(image7,100,55,null);
-        canvas.drawBitmap(image8,150,55,null);
-        canvas.drawBitmap(image9,200,55,null);
-        canvas.drawBitmap(image10,250,55,null);
-        canvas.drawBitmap(image11,300,55,null);
-        canvas.drawBitmap(image12,350,55,null);
-        canvas.drawBitmap(image13,400,55,null);
-        canvas.drawBitmap(image14,450,55,null);
-        canvas.drawBitmap(image15,500,55,null);
-        canvas.drawBitmap(image16,550,55,null);
-
-        return result;
-
-    }
 
     public void startSave(Bitmap image){
         FileOutputStream fout = null;
-        File filepath = getDisc();
+        File filepath = Environment.getExternalStorageDirectory();
 
-
-        if(!filepath.exists() && !filepath.mkdir()){
-            Toast.makeText(this,"cant create directory",Toast.LENGTH_SHORT).show();
-            return;
-        }
+        File dirfile = new File(filepath.getAbsoluteFile()+"/DE disimpan/");
+        dirfile.mkdirs();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyymmsshhmmss");
         String date = simpleDateFormat.format(new Date());
         String name = "Img"+date+".jpg";
-        String file_name = filepath.getAbsolutePath()+"/"+name;
-        File newFile = new File(file_name);
+//        String file_name = filepath.getAbsolutePath()+"/"+name;
+        File newFile = new File(dirfile.getAbsolutePath()+"/"+name);
         try{
             fout = new FileOutputStream(newFile);
 
@@ -266,10 +216,6 @@ public class BM1Activity extends AppCompatActivity{
         refreshGallery(newFile);
     }
 
-    private File getDisc() {
-        File file = new File(Environment.getExternalStorageDirectory()+File.separator + "DE disimpan" );
-        return file;
-    }
 
     // Untuk merefresh gallery setelah gambar disimpan
     public void refreshGallery(File file){
@@ -289,15 +235,7 @@ public class BM1Activity extends AppCompatActivity{
 
     public void touchAndDrag(){
         ivImage2.setOnTouchListener(new ChoiceTouchListener()); ivImage2.setOnDragListener(new ChoiceDragListener());
-        imgview6.setOnTouchListener(new ChoiceTouchListener()); imgview6.setOnDragListener(new ChoiceDragListener());
-        imgview7.setOnTouchListener(new ChoiceTouchListener()); imgview7.setOnDragListener(new ChoiceDragListener());
-        imgview8.setOnTouchListener(new ChoiceTouchListener()); imgview8.setOnDragListener(new ChoiceDragListener());
-        imgview9.setOnTouchListener(new ChoiceTouchListener()); imgview9.setOnDragListener(new ChoiceDragListener());
-        imgview10.setOnTouchListener(new ChoiceTouchListener()); imgview10.setOnDragListener(new ChoiceDragListener());
-        imgview11.setOnTouchListener(new ChoiceTouchListener()); imgview11.setOnDragListener(new ChoiceDragListener());
-        imgview12.setOnTouchListener(new ChoiceTouchListener()); imgview12.setOnDragListener(new ChoiceDragListener());
-        imgview13.setOnTouchListener(new ChoiceTouchListener()); imgview13.setOnDragListener(new ChoiceDragListener());
-        imgview16.setOnTouchListener(new ChoiceTouchListener()); imgview16.setOnDragListener(new ChoiceDragListener());
+
     }
 
     private void initial() {
@@ -380,7 +318,6 @@ public class BM1Activity extends AppCompatActivity{
 
         containerBM = findViewById(R.id.layoutcontainerBM);
         containercenterBM = findViewById(R.id.layoutcontainercenter);
-
 
     }
 
@@ -483,9 +420,6 @@ public class BM1Activity extends AppCompatActivity{
             int progressSat = satBar.getProgress() - 256;
             int progressVal = valBar.getProgress() - 256;
 
-            /*
-             * Hue (0 .. 360) Saturation (0...1) Value (0...1)
-             */
 
             float hue = (float) progressHue * 360 / 256;
             float sat = (float) progressSat / 256;
