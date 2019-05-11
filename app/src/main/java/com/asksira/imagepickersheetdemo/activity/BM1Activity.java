@@ -41,8 +41,10 @@ public class BM1Activity extends AppCompatActivity{
 
 
 
-    private ImageView ivImage1,imgbg, ivImage2, imgview6, imgview7, imgview8,imgview9,imgview10,imgview11,imgview12,imgview13,imgview14,imgview15,imgview16,imgview17,imgview18,imgview19,cancelimg,undoimg,redoimg,saveimg;
+    private ImageView ivImage1,imgbg, ivImage2,cancelimg,undoimg,redoimg,saveimg;
     Context context;
+    ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25,img26,img27,img28,img31,img32,img33,img34,img35,img36,img37,img38,img39,img40,img41,img42,img43,img46,img47, img48, img49, img50, img51, img52, img53, img54, img55, img56, img57, img58, img61, img62, img63, img64, img65, img66, img67, img68, img69, img70, img71, img72, img73;
+
     Button btnLoadImage;
     TextView textSource;
     ImageView imageMotif;
@@ -295,8 +297,6 @@ public class BM1Activity extends AppCompatActivity{
         imgview11.setOnTouchListener(new ChoiceTouchListener()); imgview11.setOnDragListener(new ChoiceDragListener());
         imgview12.setOnTouchListener(new ChoiceTouchListener()); imgview12.setOnDragListener(new ChoiceDragListener());
         imgview13.setOnTouchListener(new ChoiceTouchListener()); imgview13.setOnDragListener(new ChoiceDragListener());
-        imgview14.setOnTouchListener(new ChoiceTouchListener()); imgview14.setOnDragListener(new ChoiceDragListener());
-        imgview15.setOnTouchListener(new ChoiceTouchListener()); imgview15.setOnDragListener(new ChoiceDragListener());
         imgview16.setOnTouchListener(new ChoiceTouchListener()); imgview16.setOnDragListener(new ChoiceDragListener());
     }
 
@@ -305,17 +305,71 @@ public class BM1Activity extends AppCompatActivity{
         imgbg =findViewById(R.id.img_bg);
         ivImage2 = findViewById(R.id.iv_image2);
         //ivImage3 = findViewById(R.id.iv_image3);
-        imgview6 = findViewById(R.id.imageView6);
-        imgview7 = findViewById(R.id.imageView7);
-        imgview8 = findViewById(R.id.imageView8);
-        imgview9 = findViewById(R.id.imageView9);
-        imgview10 = findViewById(R.id.imageView10);
-        imgview11 = findViewById(R.id.imageView11);
-        imgview12 = findViewById(R.id.imageView12);
-        imgview13 = findViewById(R.id.imageView13);
-        imgview14 = findViewById(R.id.imageView14);
-        imgview15 = findViewById(R.id.imageView15);
-        imgview16 = findViewById(R.id.imageView16);
+        img1 = findViewById(R.id.imageView1);
+        img2 = findViewById(R.id.imageView2);
+        img3 = findViewById(R.id.imageView3);
+        img4 = findViewById(R.id.imageView4);
+        img5 = findViewById(R.id.imageView5);
+        img6 = findViewById(R.id.imageView6);
+        img7 = findViewById(R.id.imageView7);
+        img8 = findViewById(R.id.imageView8);
+        img9 = findViewById(R.id.imageView9);
+        img10 = findViewById(R.id.imageView10);
+        img11 = findViewById(R.id.imageView11);
+        img12 = findViewById(R.id.imageView12);
+        img13 = findViewById(R.id.imageView13);
+        img16 = findViewById(R.id.imageView16);
+        img17 = findViewById(R.id.imageView17);
+        img18 = findViewById(R.id.imageView18);
+        img19 = findViewById(R.id.imageView19);
+        img20 = findViewById(R.id.imageView20);
+        img21 = findViewById(R.id.imageView21);
+        img22 = findViewById(R.id.imageView22);
+        img23 = findViewById(R.id.imageView23);
+        img24 = findViewById(R.id.imageView24);
+        img25 = findViewById(R.id.imageView25);
+        img26 = findViewById(R.id.imageView26);
+        img27 = findViewById(R.id.imageView27);
+        img28 = findViewById(R.id.imageView28);
+        img31 = findViewById(R.id.imageView31);
+        img32 = findViewById(R.id.imageView32);
+        img33 = findViewById(R.id.imageView33);
+        img34 = findViewById(R.id.imageView34);
+        img35 = findViewById(R.id.imageView35);
+        img36 = findViewById(R.id.imageView36);
+        img37 = findViewById(R.id.imageView37);
+        img38 = findViewById(R.id.imageView38);
+        img39 = findViewById(R.id.imageView39);
+        img40 = findViewById(R.id.imageView40);
+        img41 = findViewById(R.id.imageView41);
+        img42 = findViewById(R.id.imageView42);
+        img43 = findViewById(R.id.imageView43);
+        img46 = findViewById(R.id.imageView46);
+        img47 = findViewById(R.id.imageView47);
+        img48 = findViewById(R.id.imageView48);
+        img49 = findViewById(R.id.imageView49);
+        img50 = findViewById(R.id.imageView50);
+        img51 = findViewById(R.id.imageView51);
+        img52 = findViewById(R.id.imageView52);
+        img53 = findViewById(R.id.imageView53);
+        img54 = findViewById(R.id.imageView54);
+        img55 = findViewById(R.id.imageView55);
+        img56 = findViewById(R.id.imageView56);
+        img57 = findViewById(R.id.imageView57);
+        img58 = findViewById(R.id.imageView58);
+        img61 = findViewById(R.id.imageView61);
+        img62 = findViewById(R.id.imageView62);
+        img63 = findViewById(R.id.imageView63);
+        img64 = findViewById(R.id.imageView64);
+        img65 = findViewById(R.id.imageView65);
+        img66 = findViewById(R.id.imageView66);
+        img67 = findViewById(R.id.imageView67);
+        img68 = findViewById(R.id.imageView68);
+        img69 = findViewById(R.id.imageView69);
+        img70 = findViewById(R.id.imageView70);
+        img71 = findViewById(R.id.imageView71);
+        img72 = findViewById(R.id.imageView72);
+        img73 = findViewById(R.id.imageView73);
 
         cancelimg = findViewById(R.id.cancel_imgview);
         undoimg = findViewById(R.id.undo_imgview);
