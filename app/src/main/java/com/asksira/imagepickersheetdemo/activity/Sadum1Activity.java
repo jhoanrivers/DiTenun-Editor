@@ -442,7 +442,7 @@ public class Sadum1Activity extends AppCompatActivity implements View.OnTouchLis
         img43 = findViewById(R.id.imageView43);
         img44 = findViewById(R.id.imageView44);
         img45 = findViewById(R.id.imageView45);
-        
+
 
     }
 
