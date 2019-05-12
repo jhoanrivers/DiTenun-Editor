@@ -358,7 +358,6 @@
                     android:layout_height="30dp"
                     android:background="@drawable/color_palete_calmred"
                     />
-
                 <Button
                     android:id="@+id/btnDarkRed"
                     android:layout_marginTop="20dp"

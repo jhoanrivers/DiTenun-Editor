@@ -378,70 +378,9 @@
 
 
     <ScrollView
-        android:id="@+id/bgColorCenter"
-        android:layout_width="40dp"
-        android:layout_height="150dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/style_dialog"
-        android:orientation="vertical"
-        android:padding="5dp">
-
-        <LinearLayout
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btnCalmRedCenter"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/color_palete_calmred" />
-
-            <Button
-                android:id="@+id/btnDarkRedCenter"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/color_palete_darkred" />
-
-            <Button
-                android:id="@+id/btnGreenCenter"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/color_palete_green" />
-
-            <Button
-                android:id="@+id/btnBlueCenter"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/color_palete_blue" />
-
-
-            <Button
-                android:id="@+id/btnYellowCenter"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/color_palete_yellow" />
-
-            <Button
-                android:id="@+id/btnBlackCenter"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/color_palete_black" />
-
-        </LinearLayout>
-    </ScrollView>
-
-    <ScrollView
         android:id="@+id/bgColor"
         android:layout_width="40dp"
-        android:layout_height="200dp"
+        android:layout_height="160dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="200dp"
         android:layout_marginRight="20dp"
@@ -466,29 +405,6 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/color_palete_darkred" />
-
-            <Button
-                android:id="@+id/btnGreen"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/color_palete_green" />
-
-            <Button
-                android:id="@+id/btnBlue"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/color_palete_blue" />
-
-
-            <Button
-                android:id="@+id/btnYellow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/color_palete_yellow" />
-
 
             <Button
                 android:id="@+id/btnBlack"
