@@ -291,7 +291,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_marginTop="0dp"
-            android:src="@drawable/template_ragiidup_1"
+            android:src="@drawable/template_ragiidup"
             />
 
         <!--LINE 2-->
@@ -393,11 +393,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnCalmRed"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/color_palete_calmred" />
 
             <Button
                 android:id="@+id/btnDarkRed"

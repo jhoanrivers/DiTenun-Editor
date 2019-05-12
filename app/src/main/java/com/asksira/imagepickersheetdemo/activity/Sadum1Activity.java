@@ -884,6 +884,7 @@ public class Sadum1Activity extends AppCompatActivity{
                     //Saat gambar di drag
                     SelectMotifbtn.setVisibility(View.GONE);
 //                    hueBar.setVisibility(View.GONE);
+                    findViewById(R.id.iv_image2).setVisibility(View.GONE);
                     findViewById(R.id.topbtn).setVisibility(View.GONE);
                     findViewById(R.id.bgColorCenter).setVisibility(View.GONE);
                     findViewById(R.id.bgColor).setVisibility(View.GONE);
@@ -906,6 +907,7 @@ public class Sadum1Activity extends AppCompatActivity{
                     dropIgView.post(new Runnable() {
                         @Override
                         public void run() {
+                            findViewById(R.id.iv_image2).setVisibility(View.VISIBLE);
                             SelectMotifbtn.setVisibility(View.VISIBLE);
                             findViewById(R.id.topbtn).setVisibility(View.VISIBLE);
                             findViewById(R.id.bgColorCenter).setVisibility(View.VISIBLE);
@@ -915,7 +917,7 @@ public class Sadum1Activity extends AppCompatActivity{
                             hideSystemUI();
                         }
                     });
-
+                    hideSystemUI();
                     break;
             }
             return true;

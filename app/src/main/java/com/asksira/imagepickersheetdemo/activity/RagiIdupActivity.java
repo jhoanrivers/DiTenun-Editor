@@ -43,27 +43,16 @@ import java.util.Date;
 public class RagiIdupActivity extends AppCompatActivity {
     private ImageView ivImage1,imgbg, ivImage2, imgview6,cancelimg,undoimg,redoimg,saveimg;
     SeekBar hueBar, satBar, valBar;
-    EditText edtUcapan;
-    TextView textUcapan;
     final int RQS_IMAGE1 = 1;
     Uri source;
     Bitmap bitmapMaster;
-    Button SelectMotifbtn,Ucapanbtn,ShowUcapanBtn;
+    Button SelectMotifbtn;
     static boolean btnstatus=false;
 
     private ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25,img26;
 
-
-    private Matrix matrix =new Matrix();
-    private int mImagewidth,mImageheight;
-    private ScaleGestureDetector scaleDetector;
-    private RotateGestureDetector rotateGestureDetector;
-    private MoveGestureDetector moveGestureDetector;
-    private int mScreenHeight;
-    private int mScreenWidth;
-
     ImageView image;
-    RelativeLayout relativeimages,ContainerUcapan,containerCenter;
+    RelativeLayout relativeimages;
 
 
     @Override
@@ -73,7 +62,6 @@ public class RagiIdupActivity extends AppCompatActivity {
         initial();
         touchAndDrag();
         //Edit text container tidak muncul
-        ContainerUcapan.setVisibility(View.GONE);
 
 
         //Chooose color for Background
@@ -87,64 +75,6 @@ public class RagiIdupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 relativeimages.setBackgroundResource(R.color.black);
-            }
-        });
-
-
-        //end of choose background color
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        mScreenHeight = displayMetrics.heightPixels;
-        mScreenWidth = displayMetrics.widthPixels;
-
-
-
-
-        ShowUcapanBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ContainerUcapan.setVisibility(View.VISIBLE);
-                btnstatus= true;
-                edtUcapan.requestFocus();
-                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,0);
-            }
-        });
-
-        textUcapan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ContainerUcapan.setVisibility(View.VISIBLE);
-                btnstatus= true;
-                edtUcapan.requestFocus();
-                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,0);
-            }
-        });
-
-        Ucapanbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String ucapan = edtUcapan.getText().toString();
-                if(ucapan.length()==0){
-                    textUcapan.setText("Kata Ucapan");
-                    textUcapan.setTextSize(24);
-                }
-
-                if(ucapan.length() > 15 && ucapan.length() < 20){
-                    textUcapan.setTextSize(20);
-                }
-                else if(ucapan.length() > 20){
-                    textUcapan.setTextSize(15);
-                }
-                else
-                    textUcapan.setTextSize(24);
-
-                textUcapan.setText(ucapan);
-                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
-                hideSystemUI();
-                ContainerUcapan.setVisibility(View.GONE);
             }
         });
 
@@ -305,12 +235,6 @@ public class RagiIdupActivity extends AppCompatActivity {
         saveimg = findViewById(R.id.save_imgview);
 
         //ucapan
-        ContainerUcapan = findViewById(R.id.edtucapancontainer);
-        Ucapanbtn = findViewById(R.id.btn_ucapan);
-        edtUcapan = findViewById(R.id.edt_ucapan);
-        ShowUcapanBtn = findViewById(R.id.btnshowucapan);
-        textUcapan = findViewById(R.id.txt_ucapan);
-        containerCenter = findViewById(R.id.containerCenter);
         img1 = findViewById(R.id.imageView1);
         img2 = findViewById(R.id.imageView2);
         img3 = findViewById(R.id.imageView3);
@@ -352,7 +276,6 @@ public class RagiIdupActivity extends AppCompatActivity {
 
                     try {
                         bitmapMaster = BitmapFactory.decodeStream(getContentResolver().openInputStream(source));
-
 
                         // Reset HSV value
                         hueBar.setVisibility(View.VISIBLE);
@@ -478,14 +401,7 @@ public class RagiIdupActivity extends AppCompatActivity {
         if (fragmentManager.getBackStackEntryCount() > 0 ) {
             fragmentManager.popBackStack();
 
-            if(btnstatus){
-                findViewById(R.id.layoutsize).setVisibility(View.GONE);
-            }
-            else{
-                findViewById(R.id.layoutsize).setVisibility(View.VISIBLE);
-            }
         }
-
         else
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -568,10 +484,11 @@ public class RagiIdupActivity extends AppCompatActivity {
                 case DragEvent.ACTION_DRAG_STARTED:
 
                     //Saat gambar di drag
-                    SelectMotifbtn.setVisibility(View.VISIBLE);
-                    findViewById(R.id.topbtn).setVisibility(View.VISIBLE);
-                    findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
-                    findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
+                    findViewById(R.id.iv_image2).setVisibility(View.GONE);
+                    SelectMotifbtn.setVisibility(View.GONE);
+                    findViewById(R.id.topbtn).setVisibility(View.GONE);
+                    findViewById(R.id.bgColor).setVisibility(View.GONE);
+                    findViewById(R.id.seekcontainer).setVisibility(View.GONE);
 
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
@@ -581,6 +498,7 @@ public class RagiIdupActivity extends AppCompatActivity {
                 case DragEvent.ACTION_DROP:
                     ImageView v = (ImageView) dragEvent.getLocalState();
                     ((ImageView)view).setImageDrawable(ivImage2.getDrawable());
+                    ((ImageView)view).setScaleType(ImageView.ScaleType.FIT_XY);
                     //((ImageView)v).setImageDrawable(null);
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
@@ -588,25 +506,19 @@ public class RagiIdupActivity extends AppCompatActivity {
                     dropIgView.post(new Runnable() {
                         @Override
                         public void run() {
+                            findViewById(R.id.iv_image2).setVisibility(View.VISIBLE);
                             SelectMotifbtn.setVisibility(View.VISIBLE);
                             findViewById(R.id.topbtn).setVisibility(View.VISIBLE);
                             findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
                             findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
-                            hideSystemUI();
                         }
                     });
-
+                    hideSystemUI();
                     break;
             }
             return true;
         }
     }
-
-
-
-
-
-
 
     //Menampilkan notifikasi window...
 
