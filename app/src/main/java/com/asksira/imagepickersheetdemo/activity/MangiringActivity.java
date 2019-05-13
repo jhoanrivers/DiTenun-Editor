@@ -27,17 +27,16 @@ import java.util.Date;
 
 public class MangiringActivity extends AppCompatActivity {
 
-    Button juggiahbtn,rowmotifbtn,SelectMotifbtn;
+    Button SelectMotifbtn;
     ImageView templateimgsisi,cancelimg,undoimg,redoimg,saveimg;
     static boolean btnstatus=false;
     SeekBar hueBar, satBar, valBar;
     final int RQS_IMAGE1 = 1;
     Bitmap bitmapMaster;
-    private ImageView [] rowimage;
-    RelativeLayout mangiringContainer,ContainerUcapan;
+    RelativeLayout mangiringContainer;
     Uri source;
     private int mImagewidth,mImageheight;
-    private ImageView [] row = new ImageView[30];
+    ImageView img1,img2,img3,img4,img5,img6;
 
 
     @Override
@@ -74,12 +73,6 @@ public class MangiringActivity extends AppCompatActivity {
                 startActivityForResult(intent, RQS_IMAGE1);
             }
         });
-
-        //When image center is clicked
-        for(int i=0;i<row.length;i++){
-            row[i].setOnClickListener(mClickListener);
-        }
-
 
         //Hue end
         cancelimg.setOnClickListener(new View.OnClickListener() {
@@ -138,21 +131,6 @@ public class MangiringActivity extends AppCompatActivity {
 
     }
 
-    private final View.OnClickListener mClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            for(int i=0;i<row.length;i++){
-                if(row[i] != v){
-                    row[i].setVisibility(View.VISIBLE);
-                }
-                else{
-                    v.setVisibility(View.GONE);
-                }
-
-            }
-        }
-    };
-
 
     public void startSave(Bitmap image){
         FileOutputStream fout = null;
@@ -195,8 +173,6 @@ public class MangiringActivity extends AppCompatActivity {
 
     public void initial(){
         templateimgsisi = findViewById(R.id.imgtemplate);
-        juggiahbtn = findViewById(R.id.btnjuggiah);
-        rowmotifbtn = findViewById(R.id.btnrowmotif);
         SelectMotifbtn = findViewById(R.id.motif_image);
         mangiringContainer = findViewById(R.id.containermangiring);
         cancelimg = findViewById(R.id.cancel_imgview);
@@ -205,37 +181,13 @@ public class MangiringActivity extends AppCompatActivity {
         saveimg = findViewById(R.id.save_imgview);
 
         //Untuk garis tengah
+        img1=findViewById(R.id.imgjug1);
+        img2=findViewById(R.id.imgjug2);
+        img3=findViewById(R.id.imgjug3);
+        img4=findViewById(R.id.imgjug4);
+        img5=findViewById(R.id.imgjug5);
+        img6=findViewById(R.id.imgjug6);
 
-        row[0] = findViewById(R.id.imgline1);
-        row[1]= findViewById(R.id.imgline2);
-        row[2] = findViewById(R.id.imgline3);
-        row[3] = findViewById(R.id.imgline4);
-        row[4] = findViewById(R.id.imgline5);
-        row[5] = findViewById(R.id.imgline6);
-        row[6] = findViewById(R.id.imgline7);
-        row[7] = findViewById(R.id.imgline8);
-        row[8] = findViewById(R.id.imgline9);
-        row[9] = findViewById(R.id.imgline10);
-        row[10] = findViewById(R.id.imgline11);
-        row[11] = findViewById(R.id.imgline12);
-        row[12] = findViewById(R.id.imgline13);
-        row[13] = findViewById(R.id.imgline14);
-        row[14] = findViewById(R.id.imgline15);
-        row[15] = findViewById(R.id.imgline16);
-        row[16] = findViewById(R.id.imgline17);
-        row[17] = findViewById(R.id.imgline18);
-        row[18] = findViewById(R.id.imgline19);
-        row[19] = findViewById(R.id.imgline20);
-        row[20] = findViewById(R.id.imgline21);
-        row[21] = findViewById(R.id.imgline22);
-        row[22] = findViewById(R.id.imgline23);
-        row[23] = findViewById(R.id.imgline24);
-        row[24] = findViewById(R.id.imgline25);
-        row[25] = findViewById(R.id.imgline26);
-        row[26] = findViewById(R.id.imgline27);
-        row[27] = findViewById(R.id.imgline28);
-        row[28] = findViewById(R.id.imgline29);
-        row[29] = findViewById(R.id.imgline30);
 
     }
 

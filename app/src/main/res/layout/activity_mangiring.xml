@@ -13,266 +13,71 @@
         android:id="@+id/containermangiring"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="40dp">
+            
+            <ImageView
+                android:id="@+id/imgjug1"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/imagedummy"/>
+
+            <ImageView
+                android:id="@+id/imgjug2"
+                android:layout_width="10dp"
+                android:layout_marginLeft="3dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/imagedummy"/>
+
+            <ImageView
+                android:id="@+id/imgjug3"
+                android:layout_width="10dp"
+                android:layout_marginLeft="3dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/imagedummy"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp">
+
+            <ImageView
+                android:id="@+id/imgjug4"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/imagedummy" />
+
+            <ImageView
+                android:id="@+id/imgjug5"
+                android:layout_width="10dp"
+                android:layout_marginLeft="3dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/imagedummy" />
+
+            <ImageView
+                android:id="@+id/imgjug6"
+                android:layout_width="10dp"
+                android:layout_marginLeft="3dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/imagedummy" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imgtemplate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:src="@drawable/template_mangiring"
             />
         <!--android:src="@drawable/mangiring_template"-->
-
-        <LinearLayout
-            android:layout_width="260dp"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imgline1"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                />
-            <ImageView
-                android:id="@+id/imgline2"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                />
-            <ImageView
-                android:id="@+id/imgline3"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                tools:ignore="ContentDescription"
-                />
-            <ImageView
-                android:id="@+id/imgline4"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline5"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline6"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline7"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline8"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline9"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline10"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline11"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline12"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline13"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline14"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline15"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline16"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline17"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline18"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline19"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline20"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline21"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline22"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline23"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline24"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline25"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline26"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline27"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline28"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-            <ImageView
-                android:id="@+id/imgline29"
-                android:layout_width="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-            />
-
-            <ImageView
-                android:id="@+id/imgline30"
-            android:layout_width="5dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            />
-
-        </LinearLayout>
 
     </RelativeLayout>
 
@@ -378,21 +183,6 @@
         android:orientation="vertical"
         android:layout_marginRight="10dp">
 
-
-        <Button
-            android:id="@+id/btnjuggiah"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/ic_vertical_line"
-            />
-
-        <Button
-            android:id="@+id/btnrowmotif"
-            android:background="@drawable/ic_horizontal_line"
-            android:layout_marginTop="20dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            />
 
         <Button
             android:id="@+id/motif_image"

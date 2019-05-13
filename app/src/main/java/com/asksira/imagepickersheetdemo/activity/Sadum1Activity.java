@@ -948,12 +948,12 @@ public class Sadum1Activity extends AppCompatActivity{
                     ImageView v = (ImageView) dragEvent.getLocalState();
 
                     if(view == garbage){
-
                         ((ImageView)v).setImageDrawable(null);
                         findViewById(R.id.seekcontainer).setVisibility(View.GONE);
                     }
                     else {
                         ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);
                     }
                     break;
@@ -963,14 +963,12 @@ public class Sadum1Activity extends AppCompatActivity{
                         @Override
                         public void run() {
                             ImageView v = (ImageView) dragEvent.getLocalState();
-
                             findViewById(R.id.iv_image2).setVisibility(View.VISIBLE);
                             SelectMotifbtn.setVisibility(View.VISIBLE);
                             findViewById(R.id.topbtn).setVisibility(View.VISIBLE);
                             findViewById(R.id.bgColorCenter).setVisibility(View.VISIBLE);
                             findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
                             findViewById(R.id.btnshowucapan).setVisibility(View.VISIBLE);
-                            findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                             garbage.setVisibility(View.GONE);
                             hideSystemUI();
                         }

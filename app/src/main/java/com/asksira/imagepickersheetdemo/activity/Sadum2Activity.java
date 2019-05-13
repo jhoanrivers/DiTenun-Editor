@@ -49,7 +49,7 @@ import java.util.Date;
 
 public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchListener{
 
-    private ImageView ivImage1,imgbg, ivImage2, imgview6,cancelimg,undoimg,redoimg,saveimg;
+    private ImageView ivImage1,imgbg, ivImage2, imgview6,cancelimg,undoimg,redoimg,saveimg,garbageimg;
     SeekBar hueBar, satBar, valBar;
     EditText edtUcapan;
     TextView textUcapan;
@@ -221,10 +221,6 @@ public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchLi
         //Ontouch
         //ivImage2.setOnTouchListener(this);
         //image.setOnTouchListener(this);
-
-        scaleDetector = new ScaleGestureDetector(getApplicationContext(),new ScaleListener());
-        rotateGestureDetector = new RotateGestureDetector(getApplication(), new RotateListener());
-        moveGestureDetector = new MoveGestureDetector(getApplication(),new MoveListener());
 
 
 
@@ -431,6 +427,7 @@ public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchLi
         undoimg = findViewById(R.id.undo_imgview);
         redoimg = findViewById(R.id.redo_imgview);
         saveimg = findViewById(R.id.save_imgview);
+        garbageimg = findViewById(R.id.garbage_imgview);
 
         //ucapan
         ContainerUcapan = findViewById(R.id.edtucapancontainer);
@@ -632,39 +629,6 @@ public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchLi
 
         }
     }
-
-    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
-        @Override
-        public boolean onScale(ScaleGestureDetector detector) {
-            mscaleFactor*= detector.getScaleFactor();
-            mscaleFactor = Math.max(0.1f, Math.min(mscaleFactor, 1.0f));
-            return true;
-        }
-    }
-
-    private class RotateListener extends RotateGestureDetector.SimpleOnRotateGestureListener{
-
-        @Override
-        public boolean onRotate(RotateGestureDetector detector){
-            mrotationDegree -=detector.getRotationDegreesDelta();
-            return true;
-        }
-
-    }
-
-    private class MoveListener extends MoveGestureDetector.SimpleOnMoveGestureListener{
-
-        @Override
-        public boolean onMove(MoveGestureDetector detector){
-            PointF d = detector.getFocusDelta();
-            mFocusX +=d.x;
-            mFocusY += d.y;
-
-            return true;
-
-        }
-    }
-
 
 
 

@@ -406,6 +406,7 @@ public class BM1Activity extends AppCompatActivity{
                     ivImage2.setVisibility(View.GONE);
                     garbageimg.setVisibility(View.VISIBLE);
                     findViewById(R.id.seekcontainer).setVisibility(View.GONE);
+                    findViewById(R.id.bgColor).setVisibility(View.GONE);
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
                     break;
@@ -419,6 +420,7 @@ public class BM1Activity extends AppCompatActivity{
                     }
                     else {
                         ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);
                     }
                     break;
@@ -434,9 +436,9 @@ public class BM1Activity extends AppCompatActivity{
                             undoimg.setVisibility(View.VISIBLE);
                             saveimg.setVisibility(View.VISIBLE);
                             findViewById(R.id.motif_image).setVisibility(View.VISIBLE);
-                            findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                             ivImage2.setVisibility(View.VISIBLE);
                             garbageimg.setVisibility(View.GONE);
+                            findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
                         }
                     });
                     hideSystemUI();
