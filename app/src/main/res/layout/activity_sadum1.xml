@@ -48,6 +48,7 @@
             android:textStyle="bold"
             android:textAlignment="center"
             android:letterSpacing="0.5"
+            android:textColorHint="@color/white"
             android:hint="Kata Ucapan"
             android:textColor="@color/white"
             />
@@ -1664,7 +1665,28 @@
                 app:srcCompat="@drawable/imagedummy"
                 />
 
+
+
         </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <ImageView
+            android:id="@+id/garbage_imgview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_garbage"
+            />
+
 
     </RelativeLayout>
 
@@ -1712,12 +1734,13 @@
         android:layout_alignParentLeft="true">
 
         <ImageView
-            android:id="@+id/cancel_imgview"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="4dp"
-            app:srcCompat="@drawable/ic_cross" />
+        android:id="@+id/cancel_imgview"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        app:srcCompat="@drawable/ic_cross" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -1754,7 +1777,6 @@
 
         </LinearLayout>
     </RelativeLayout>
-
 
     <ScrollView
         android:id="@+id/bgColorCenter"
@@ -1939,6 +1961,18 @@
             android:progress="256"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:text="----------------Batas Simetris Ulos------------------"
+        android:textSize="16dp"
+        android:textStyle="italic"
+        android:textColor="@color/grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
 
 
 </RelativeLayout>

@@ -41,7 +41,7 @@ public class BM1Activity extends AppCompatActivity{
 
 
 
-    private ImageView ivImage1,imgbg, ivImage2,cancelimg,undoimg,redoimg,saveimg;
+    private ImageView ivImage1,imgbg, ivImage2,cancelimg,undoimg,redoimg,saveimg,garbageimg;
     Context context;
     ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25,img26,img27,img28,img31,img32,img33,img34,img35,img36,img37,img38,img39,img40,img41,img42,img43,img46,img47, img48, img49, img50, img51, img52, img53, img54, img55, img56, img57, img58, img61, img62, img63, img64, img65, img66, img67, img68, img69, img70, img71, img72, img73;
 
@@ -65,6 +65,10 @@ public class BM1Activity extends AppCompatActivity{
         initial();
         touchAndDrag();
 
+
+
+        //oncreate
+        garbageimg.setVisibility(View.GONE);
 
         //button change color background
         findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
@@ -235,13 +239,79 @@ public class BM1Activity extends AppCompatActivity{
 
     public void touchAndDrag(){
         ivImage2.setOnTouchListener(new ChoiceTouchListener()); ivImage2.setOnDragListener(new ChoiceDragListener());
-
+        img1.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img1.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img2.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img2.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img3.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img3.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img4.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img4.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img5.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img5.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img6.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img6.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img7.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img7.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img8.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img8.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img9.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img9.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img10.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img10.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img11.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img11.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img12.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img12.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img13.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img13.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img16.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img16.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img17.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img17.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img18.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img18.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img19.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img19.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img20.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img20.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img21.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img21.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img22.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img22.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img23.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img23.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img24.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img24.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img25.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img25.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img26.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img26.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img27.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img27.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img28.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img28.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img31.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img31.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img32.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img32.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img33.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img33.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img34.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img34.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img35.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img35.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img36.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img36.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img37.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img37.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img38.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img38.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img39.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img39.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img40.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img40.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img41.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img41.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img42.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img42.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img43.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img43.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img46.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img46.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img47.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img47.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img48.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img48.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img49.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img49.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img50.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img50.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img51.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img51.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img52.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img52.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img53.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img53.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img54.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img54.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img55.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img55.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img56.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img56.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img57.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img57.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img58.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img58.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img61.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img61.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img62.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img62.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img63.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img63.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img64.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img64.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img65.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img65.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img66.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img66.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img67.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img67.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img68.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img68.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img69.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img69.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img70.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img70.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img71.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img71.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img72.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img72.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        img73.setOnTouchListener(new BM1Activity.ChoiceTouchListener());img73.setOnDragListener(new BM1Activity.ChoiceDragListener());
+        garbageimg.setOnTouchListener(new BM1Activity.ChoiceTouchListener());garbageimg.setOnDragListener(new BM1Activity.ChoiceDragListener());
     }
 
     private void initial() {
 
         imgbg =findViewById(R.id.img_bg);
         ivImage2 = findViewById(R.id.iv_image2);
+        garbageimg = findViewById(R.id.garbage_imgview);
         //ivImage3 = findViewById(R.id.iv_image3);
         img1 = findViewById(R.id.imageView1);
         img2 = findViewById(R.id.imageView2);
@@ -334,6 +404,8 @@ public class BM1Activity extends AppCompatActivity{
                     saveimg.setVisibility(View.GONE);
                     findViewById(R.id.motif_image).setVisibility(View.GONE);
                     ivImage2.setVisibility(View.GONE);
+                    garbageimg.setVisibility(View.VISIBLE);
+                    findViewById(R.id.seekcontainer).setVisibility(View.GONE);
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
                     break;
@@ -341,16 +413,34 @@ public class BM1Activity extends AppCompatActivity{
                     break;
                 case DragEvent.ACTION_DROP:
                     ImageView v = (ImageView) dragEvent.getLocalState();
-                    ((ImageView)view).setImageDrawable(ivImage2.getDrawable());
-                    //((ImageView)v).setImageDrawable(null);
+                    if(view == garbageimg){
+                        ((ImageView)v).setImageDrawable(null);
+                        findViewById(R.id.seekcontainer).setVisibility(View.GONE);
+                    }
+                    else {
+                        ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        //((ImageView)v).setImageDrawable(null);
+                    }
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
-                    cancelimg.setVisibility(View.VISIBLE);
-                    redoimg.setVisibility(View.VISIBLE);
-                    undoimg.setVisibility(View.VISIBLE);
-                    saveimg.setVisibility(View.VISIBLE);
-                    findViewById(R.id.motif_image).setVisibility(View.VISIBLE);
-                    ivImage2.setVisibility(View.VISIBLE);
+
+                    final View dropIgView = (View) dragEvent.getLocalState();
+                    dropIgView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            ImageView v = (ImageView) dragEvent.getLocalState();
+                            cancelimg.setVisibility(View.VISIBLE);
+                            redoimg.setVisibility(View.VISIBLE);
+                            undoimg.setVisibility(View.VISIBLE);
+                            saveimg.setVisibility(View.VISIBLE);
+                            findViewById(R.id.motif_image).setVisibility(View.VISIBLE);
+                            findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
+                            ivImage2.setVisibility(View.VISIBLE);
+                            garbageimg.setVisibility(View.GONE);
+                        }
+                    });
+                    hideSystemUI();
+
                     break;
             }
             return true;

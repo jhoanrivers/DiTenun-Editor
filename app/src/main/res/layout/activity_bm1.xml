@@ -37,15 +37,12 @@
             android:src="@drawable/templateulos_bm_2"
             />
 
-
-
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             >
 
             <ImageView
@@ -53,118 +50,92 @@
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="27dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="81dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="108dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="135dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="162dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="189dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="243dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView11"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView12"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="297dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView13"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="324dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
         </LinearLayout>
 
         <!--LINE 2-->
@@ -173,7 +144,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="52dp"
             >
 
             <ImageView
@@ -181,119 +152,93 @@
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp"/>
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView17"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="27dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView18"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView19"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="81dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView20"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="108dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView21"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="135dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView22"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="162dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView23"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="189dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView24"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView25"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="243dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView26"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView27"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="297dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
 
             <ImageView
                 android:id="@+id/imageView28"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="378dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
         </LinearLayout>
 
 
@@ -304,7 +249,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="90dp"
             >
 
             <ImageView
@@ -312,118 +257,92 @@
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView32"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="27dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView33"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView34"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="81dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView35"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="108dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView36"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="135dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView37"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="162dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView38"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="189dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView39"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView40"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="243dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView41"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView42"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="297dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView43"
                 android:layout_width="31dp"
                 android:layout_height="15dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="324dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
 
         </LinearLayout>
 
@@ -433,7 +352,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="264dp"
+            android:layout_marginTop="274dp"
             >
 
             <ImageView
@@ -441,118 +360,92 @@
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView47"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="27dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView48"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView49"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="81dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView50"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="108dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView51"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="135dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView52"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="162dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView53"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="189dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView54"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView55"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="243dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView56"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView57"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="297dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView58"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="324dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
 
         </LinearLayout>
 
@@ -562,7 +455,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="420dp"
+            android:layout_marginTop="430dp"
             >
 
             <ImageView
@@ -570,118 +463,92 @@
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView62"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="27dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView63"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView64"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="81dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView65"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="108dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView66"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="135dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView67"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="162dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView68"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="189dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView69"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView70"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="243dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView71"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView72"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="297dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
             <ImageView
                 android:id="@+id/imageView73"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="324dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                app:srcCompat="@drawable/imagedummy"
+                />
 
         </LinearLayout>
     </RelativeLayout>
@@ -797,12 +664,33 @@
     <TextView
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="220dp"
-        android:text="End Of Design"
-        android:textSize="20dp"
-        android:textColor="@color/white"
+        android:text="-------------------Batas Simetris Ulos-------------------"
+        android:textSize="16dp"
+        android:textStyle="italic"
+        android:textColor="@color/grey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <ImageView
+            android:id="@+id/garbage_imgview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_garbage"
+            />
+
+
+    </RelativeLayout>
 
 
     <LinearLayout
