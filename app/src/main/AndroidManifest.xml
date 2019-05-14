@@ -9,15 +9,17 @@
 
     <application
         android:name=".App"
-        android:hardwareAccelerated="false"
-        android:largeHeap="true"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-
-
+        <activity android:name=".activity.DashboardActivity"
+            android:label="DiTenun Editor"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".activity.SadumFlexible"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -28,18 +30,16 @@
         <activity
             android:name=".activity.SpecificSingleImage"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.SpecificKristikActivity"
-            android:theme="@style/AppTheme"></activity>
-        <!-- <activity -->
+        <activity
+            android:name=".activity.SpecificKristikActivity"
+            android:theme="@style/AppTheme" /> <!-- <activity -->
         <!-- android:name=".activity.HomeActivity" -->
         <!-- android:label="@string/title_activity_home"></activity> -->
         <activity
-            android:name=".activity.DashboardActivity"
-            android:label="DiTenun Editor"
+            android:name=".activity.SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

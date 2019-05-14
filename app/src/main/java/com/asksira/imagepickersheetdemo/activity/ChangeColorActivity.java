@@ -77,7 +77,6 @@ public class ChangeColorActivity extends AppCompatActivity {
             if(bitmapSource != null){
                 buttonProcess.setEnabled(false);
                 GroupBitmap groupBMResult = updateHSV(bitmapSource);
-
                 imgTarget.setImageBitmap(groupBMResult.bitmapDest);
                 imgHue.setImageBitmap(groupBMResult.bitmapHue);
                 imgSat.setImageBitmap(groupBMResult.bitmapSat);

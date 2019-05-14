@@ -39,7 +39,6 @@ public class SpecificKristikActivity extends AppCompatActivity {
         filename = i.getStringArrayExtra("filename");
         getSupportActionBar().setTitle(filename[position]);
 
-
         text = findViewById(R.id.text);
         text.setText(filename[position]);
         imageview =findViewById(R.id.image);

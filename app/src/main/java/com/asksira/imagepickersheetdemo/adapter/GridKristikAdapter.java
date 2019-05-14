@@ -52,10 +52,8 @@ public class GridKristikAdapter extends BaseAdapter {
 
         if (view == null) {
             vi = inflater.inflate(R.layout.item_single_grid, null);
-
             TextView text = vi.findViewById(R.id.text);
             ImageView image = vi.findViewById(R.id.image);
-
             text.setText(filename[i]);
             Bitmap bmp = BitmapFactory.decodeFile(filepath[i]);
             image.setImageBitmap(bmp);

@@ -16,8 +16,8 @@
         >
         <RelativeLayout
             android:id="@+id/motifkepala"
-            android:layout_width="200dp"
-            android:layout_height="184dp"
+            android:layout_width="210dp"
+            android:layout_height="194dp"
             android:layout_centerHorizontal="true"
             android:background="@color/white">
 
@@ -35,7 +35,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="7dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -44,7 +44,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -53,7 +53,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -62,7 +62,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -71,7 +71,7 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -80,7 +80,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -89,7 +89,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -98,7 +98,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -107,7 +107,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -116,7 +116,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -125,7 +125,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -134,7 +134,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -143,7 +143,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -152,7 +152,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -161,7 +161,7 @@
                     android:layout_height="15dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
                 <ImageView
                     android:id="@+id/imageView16"
@@ -169,7 +169,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -178,7 +178,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -187,7 +187,7 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
 
                 <ImageView
@@ -196,16 +196,15 @@
                     android:layout_height="5dp"
                     android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/imagedummy"
+                    app:srcCompat="@drawable/imagedummyragiidup"
                     />
-
             </LinearLayout>
 
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/motiftengah"
             android:layout_width="200dp"
-            android:layout_height="364dp"
+            android:layout_height="370dp"
             android:layout_below="@+id/motifkepala"
             android:layout_centerHorizontal="true">
 
@@ -277,8 +276,6 @@
                     app:srcCompat="@drawable/imagedummy"
                     />
 
-
-
             </LinearLayout>
 
 
@@ -319,8 +316,6 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="207dp"
         android:background="@drawable/ic_pattern_1" />
-
-
 
     <!--BUTTON UNTUK CANCEL SAVE DLL-->
     <RelativeLayout

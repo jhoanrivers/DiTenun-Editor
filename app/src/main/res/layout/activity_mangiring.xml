@@ -18,27 +18,30 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_marginLeft="40dp">
+            android:layout_marginLeft="46dp">
             
             <ImageView
                 android:id="@+id/imgjug1"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/imagedummy"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/imagedummymangiring"/>
 
             <ImageView
                 android:id="@+id/imgjug2"
                 android:layout_width="10dp"
                 android:layout_marginLeft="3dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/imagedummy"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/imagedummymangiring"/>
 
             <ImageView
                 android:id="@+id/imgjug3"
                 android:layout_width="10dp"
                 android:layout_marginLeft="3dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/imagedummy"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/imagedummymangiring"/>
         </LinearLayout>
 
         <LinearLayout
@@ -46,27 +49,30 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="40dp">
+            android:layout_marginRight="46dp">
 
             <ImageView
                 android:id="@+id/imgjug4"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/imagedummy" />
+                android:scaleType="fitXY"
+                android:src="@drawable/imagedummymangiring" />
 
             <ImageView
                 android:id="@+id/imgjug5"
                 android:layout_width="10dp"
                 android:layout_marginLeft="3dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/imagedummy" />
+                android:scaleType="fitXY"
+                android:src="@drawable/imagedummymangiring" />
 
             <ImageView
                 android:id="@+id/imgjug6"
                 android:layout_width="10dp"
                 android:layout_marginLeft="3dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/imagedummy" />
+                android:scaleType="fitXY"
+                android:src="@drawable/imagedummymangiring" />
         </LinearLayout>
 
         <ImageView
@@ -78,13 +84,11 @@
             android:src="@drawable/template_mangiring"
             />
         <!--android:src="@drawable/mangiring_template"-->
-
     </RelativeLayout>
-
 
     <!--BUTTON UNTUK CANCEL SAVE DLL-->
     <RelativeLayout
-        android:id="@+id/topmenu"
+        android:id="@+id/topbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -130,8 +134,8 @@
 
             <ImageView
                 android:id="@+id/save_imgview"
-                android:layout_width="19dp"
-                android:layout_height="20dp"
+                android:layout_width="22dp"
+                android:layout_height="23dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="4dp"
                 app:srcCompat="@drawable/ic_check"
@@ -183,7 +187,6 @@
         android:orientation="vertical"
         android:layout_marginRight="10dp">
 
-
         <Button
             android:id="@+id/motif_image"
             android:background="@drawable/ic_pattern_1"
@@ -191,8 +194,75 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/seekcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+
+        <SeekBar
+            android:id="@+id/huebar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="511"
+            android:progress="256"
+            android:background="@drawable/hue_bg"/>
+        <SeekBar
+            android:id="@+id/satbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="511"
+            android:progress="256"/>
+        <SeekBar
+            android:id="@+id/valbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="511"
+            android:progress="256"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:text="------------------Batas Simetris Ulos--------------------"
+        android:textSize="16dp"
+        android:textStyle="italic"
+        android:textColor="@color/grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+
+    <ImageView
+        android:id="@+id/iv_image2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <ImageView
+            android:id="@+id/garbage_imgview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_garbage"
+            />
+    </RelativeLayout>
 
 
 </RelativeLayout>

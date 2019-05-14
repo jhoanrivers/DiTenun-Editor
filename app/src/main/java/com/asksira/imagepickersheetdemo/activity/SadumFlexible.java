@@ -329,8 +329,6 @@ public class SadumFlexible extends AppCompatActivity implements View.OnTouchList
         findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
         findViewById(R.id.motif_image).setVisibility(View.VISIBLE);
 
-
-
     }
 
     @Override

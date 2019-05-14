@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DiTenun Editor 2</string>
+    <string name="app_name">DiTenun Editor</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="sadum">Sadum</string>
     <string name="bintang_maratur">Bintang Maratur</string>

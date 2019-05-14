@@ -30,11 +30,10 @@ public class CustomListAdapter extends BaseAdapter {
         arrayList = new ArrayList<>();
         Resources res = c.getResources();
         String [] names = res.getStringArray(R.array.template_name);
-        int[] images = {R.drawable.image0, R.drawable.image1,R.drawable.image1,R.drawable.image1,R.drawable.ic_plus};
+        int[] images = {R.drawable.image0, R.drawable.image1,R.drawable.list_ragiidup,R.drawable.listmangiring,R.drawable.ic_plus};
 
         for (int i=0;i < names.length;i++){
             arrayList.add(new Singlerow(names[i],images[i]));
-
         }
 
     }
@@ -62,11 +61,9 @@ public class CustomListAdapter extends BaseAdapter {
         View row = inflater.inflate(R.layout.custom_row_listview,viewGroup,false);
         TextView tv = (TextView)row.findViewById(R.id.textView_template);
         ImageView iv = (ImageView)row.findViewById(R.id.imageView_template);
-
         Singlerow temp_obj = arrayList.get(i);
         tv.setText(temp_obj.name);
         iv.setImageResource(temp_obj.image);
-
         return row;
     }
 }

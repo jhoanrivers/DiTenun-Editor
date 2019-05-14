@@ -1645,7 +1645,6 @@
                 android:layout_height="28dp"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/imagedummy"
-
                 />
 
             <ImageView
@@ -1654,7 +1653,6 @@
                 android:layout_height="28dp"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/imagedummy"
-
                 />
 
             <ImageView
@@ -1686,8 +1684,6 @@
             android:scaleType="fitXY"
             app:srcCompat="@drawable/ic_garbage"
             />
-
-
     </RelativeLayout>
 
 

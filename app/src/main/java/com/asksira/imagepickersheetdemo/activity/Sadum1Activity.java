@@ -167,17 +167,11 @@ public class Sadum1Activity extends AppCompatActivity{
             }
         });
 
-
-
-
         //end of choose background color
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         mScreenHeight = displayMetrics.heightPixels;
         mScreenWidth = displayMetrics.widthPixels;
-
-
-
 
         ShowUcapanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -242,18 +236,13 @@ public class Sadum1Activity extends AppCompatActivity{
         hueBar = (SeekBar) findViewById(R.id.huebar);
         satBar = (SeekBar) findViewById(R.id.satbar);
         valBar = (SeekBar) findViewById(R.id.valbar);
-
         //Saat belum ada foto
         hueBar.setVisibility(View.GONE);
         satBar.setVisibility(View.GONE);
         valBar.setVisibility(View.GONE);
-
         hueBar.setOnSeekBarChangeListener(seekBarChangeListener);
         satBar.setOnSeekBarChangeListener(seekBarChangeListener);
         valBar.setOnSeekBarChangeListener(seekBarChangeListener);
-
-
-
         cancelimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -283,8 +272,6 @@ public class Sadum1Activity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 // undo function
-
-
             }
 
         });
@@ -293,8 +280,6 @@ public class Sadum1Activity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 //redo function
-
-
             }
         });
 
@@ -979,12 +964,6 @@ public class Sadum1Activity extends AppCompatActivity{
             return true;
         }
     }
-
-
-
-
-
-
 
     //Menampilkan notifikasi window...
 
