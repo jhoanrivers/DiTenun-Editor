@@ -19,16 +19,16 @@ public class ChooseBasicSadum extends AppCompatActivity {
 
 
     String[] listviewTitle = new String[]{
-            "Sadum Bonggit 1", "Sadum Bonggit 2", "Sadum Fleksibel",
+            "Sadum Bonggit 1", "Sadum Bonggit 2",
     };
 
 
     int[] listviewImage = new int[]{
-            R.drawable.image0,R.drawable.image0,R.drawable.image0,
+            R.drawable.image0,R.drawable.image0,
     };
 
     String[] listviewShortDescription = new String[]{
-            "Bonggit tipe 1 ukuran 180x90cm", "Bonggit tipe 2 ukuran 180x90cm", "Ukuran dan motif dapat diatur sesuai keinginan",
+            "Bonggit tipe 1 ukuran 180x90cm", "Bonggit tipe 2 ukuran 180x90cm",
     };
 
 
@@ -44,7 +44,7 @@ public class ChooseBasicSadum extends AppCompatActivity {
 
         List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             HashMap<String, String> hm = new HashMap<String, String>();
             hm.put("listview_title", listviewTitle[i]);
             hm.put("listview_discription", listviewShortDescription[i]);
@@ -72,10 +72,10 @@ public class ChooseBasicSadum extends AppCompatActivity {
                         startActivity(new Intent(ChooseBasicSadum.this,Sadum2Activity.class));
                         finish();
                         break;
-                    case 2:
-                        startActivity(new Intent(ChooseBasicSadum.this, SadumFlexible.class));
-                        finish();
-                        break;
+//                    case 2:
+//                        startActivity(new Intent(ChooseBasicSadum.this, Sadum5Activity.class));
+//                        finish();
+//                        break;
 
                 }
             }

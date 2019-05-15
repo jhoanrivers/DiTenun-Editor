@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:layout_centerVertical="true"
         >
 
@@ -30,10 +31,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp"
-            android:src="@drawable/sadum_template_1"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/template_sadum_1_fix"
             />
-
 
         <TextView
             android:id="@+id/txt_ucapan"
@@ -42,7 +42,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="200dp"
+            android:layout_marginBottom="190dp"
             android:textSize="24dp"
             android:textAllCaps="true"
             android:textStyle="bold"
@@ -54,7 +54,7 @@
             />
 
 
-            <LinearLayout
+        <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -76,7 +76,6 @@
                     android:layout_height="28dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/imagedummy"
-
                     />
 
                 <ImageView
@@ -197,7 +196,6 @@
                     />
 
             </LinearLayout>
-
         <!--LINE 2-->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -343,10 +341,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 3-->
-
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -491,9 +486,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 4-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -638,9 +631,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 5-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -785,9 +776,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 6-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -932,9 +921,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 7-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1079,9 +1066,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 8-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1226,9 +1211,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 9-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1373,9 +1356,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 10-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1520,9 +1501,7 @@
                 />
 
         </LinearLayout>
-
         <!--LINE 11-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1695,7 +1674,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="210dp"
         android:background="@drawable/ic_pattern_1" />
 
     <Button
@@ -1952,13 +1931,25 @@
     <TextView
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="80dp"
-        android:text="----------------Batas Simetris Ulos------------------"
+        android:text="----------------batas simetris ulos------------------"
         android:textSize="16dp"
         android:textStyle="italic"
         android:textColor="@color/grey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:text="----------------end of design------------------"
+        android:textSize="16dp"
+        android:textStyle="italic"
+        android:textColor="@color/grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
 
     <ImageView
         android:id="@+id/iv_image2"

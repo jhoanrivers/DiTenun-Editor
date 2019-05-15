@@ -70,6 +70,13 @@ public class MangiringActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mangiringContainer.setBackgroundResource(R.color.black);
+            }
+        });
+
 
 
         SelectMotifbtn.setOnClickListener(new View.OnClickListener() {
@@ -351,22 +358,25 @@ public class MangiringActivity extends AppCompatActivity {
                 case DragEvent.ACTION_DRAG_ENTERED:
                     break;
                 case DragEvent.ACTION_DRAG_EXITED:
+
                     break;
                 case DragEvent.ACTION_DROP:
                     ImageView v = (ImageView) dragEvent.getLocalState();
+
                     if(view == garbage){
                         ((ImageView)v).setImageDrawable(null);
-                        findViewById(R.id.seekcontainer).setVisibility(View.GONE);
+                        findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                     }
                     else {
                         ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        ((ImageView)view).setScaleType(ImageView.ScaleType.CENTER_CROP);
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);
                     }
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
-                    final View dropIgView = (View) dragEvent.getLocalState();
-                    dropIgView.post(new Runnable() {
+
+                    view.post(new Runnable() {
                         @Override
                         public void run() {
                             ImageView v = (ImageView) dragEvent.getLocalState();
@@ -376,10 +386,9 @@ public class MangiringActivity extends AppCompatActivity {
                             findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
                             findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                             garbage.setVisibility(View.GONE);
-                            hideSystemUI();
                         }
                     });
-                    hideSystemUI();
+                   hideSystemUI();
                     break;
             }
             return true;

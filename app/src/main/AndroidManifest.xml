@@ -17,9 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity android:name=".activity.DashboardActivity"
-            android:label="DiTenun Editor"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+                android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".activity.SadumFlexible"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -37,7 +35,7 @@
         <!-- android:label="@string/title_activity_home"></activity> -->
         <activity
             android:name=".activity.SplashScreen"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

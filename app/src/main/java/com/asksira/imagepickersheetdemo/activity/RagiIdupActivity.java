@@ -41,7 +41,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class RagiIdupActivity extends AppCompatActivity {
-    private ImageView ivImage1,imgbg, ivImage2, imgview6,cancelimg,undoimg,redoimg,saveimg;
+    private ImageView ivImage1,imgbg, ivImage2, imgview6,cancelimg,undoimg,redoimg,saveimg,garbage;
     SeekBar hueBar, satBar, valBar;
     final int RQS_IMAGE1 = 1;
     Uri source;
@@ -64,11 +64,12 @@ public class RagiIdupActivity extends AppCompatActivity {
         //Edit text container tidak muncul
 
 
+        findViewById(R.id.garbage_imgview).setVisibility(View.GONE);
         //Chooose color for Background
         findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                relativeimages.setBackgroundResource(R.color.darkRed);
+                relativeimages.setBackgroundResource(R.color.purple);
             }
         });
         findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
@@ -233,6 +234,7 @@ public class RagiIdupActivity extends AppCompatActivity {
         undoimg = findViewById(R.id.undo_imgview);
         redoimg = findViewById(R.id.redo_imgview);
         saveimg = findViewById(R.id.save_imgview);
+        garbage = findViewById(R.id.garbage_imgview);
 
         //ucapan
         img1 = findViewById(R.id.imageView1);
@@ -438,6 +440,7 @@ public class RagiIdupActivity extends AppCompatActivity {
         img8.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img8.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img9.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img9.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img10.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img10.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
+
         img11.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img11.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img12.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img12.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img13.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img13.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
@@ -448,13 +451,16 @@ public class RagiIdupActivity extends AppCompatActivity {
         img18.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img18.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img19.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img19.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img20.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img20.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
+
         img21.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img21.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img22.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img22.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img23.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img23.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img24.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img24.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img25.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img25.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
         img26.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());img26.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
-        }
+        garbage.setOnTouchListener(new RagiIdupActivity.ChoiceTouchListener());garbage.setOnDragListener(new RagiIdupActivity.ChoiceDragListener());
+
+    }
 
     public final class ChoiceTouchListener implements View.OnTouchListener {
 
@@ -489,6 +495,7 @@ public class RagiIdupActivity extends AppCompatActivity {
                     findViewById(R.id.topbtn).setVisibility(View.GONE);
                     findViewById(R.id.bgColor).setVisibility(View.GONE);
                     findViewById(R.id.seekcontainer).setVisibility(View.GONE);
+                    garbage.setVisibility(View.VISIBLE);
 
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
@@ -497,13 +504,21 @@ public class RagiIdupActivity extends AppCompatActivity {
                     break;
                 case DragEvent.ACTION_DROP:
                     ImageView v = (ImageView) dragEvent.getLocalState();
-                    ((ImageView)view).setImageDrawable(ivImage2.getDrawable());
-                    ((ImageView)view).setScaleType(ImageView.ScaleType.FIT_XY);
-                    //((ImageView)v).setImageDrawable(null);
+
+                    if(view == garbage){
+                        ((ImageView)v).setImageDrawable(null);
+                        findViewById(R.id.seekcontainer).setVisibility(View.GONE);
+                    }
+                    else {
+                        ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        ((ImageView)view).setScaleType(ImageView.ScaleType.CENTER_CROP);
+                        findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
+                        //((ImageView)v).setImageDrawable(null);
+                    }
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
-                    final View dropIgView = (View) dragEvent.getLocalState();
-                    dropIgView.post(new Runnable() {
+
+                    view.post(new Runnable() {
                         @Override
                         public void run() {
                             findViewById(R.id.iv_image2).setVisibility(View.VISIBLE);
@@ -511,6 +526,7 @@ public class RagiIdupActivity extends AppCompatActivity {
                             findViewById(R.id.topbtn).setVisibility(View.VISIBLE);
                             findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
                             findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
+                            garbage.setVisibility(View.GONE);
                         }
                     });
                     hideSystemUI();

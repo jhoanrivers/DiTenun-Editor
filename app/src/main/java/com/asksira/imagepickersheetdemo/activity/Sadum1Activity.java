@@ -203,7 +203,6 @@ public class Sadum1Activity extends AppCompatActivity{
                     textUcapan.setText("Kata Ucapan");
                     textUcapan.setTextSize(24);
                 }
-
                 if(ucapan.length() > 15 && ucapan.length() < 20){
                     textUcapan.setTextSize(20);
                 }
@@ -341,7 +340,6 @@ public class Sadum1Activity extends AppCompatActivity{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         refreshGallery(newFile);
     }
 
@@ -376,6 +374,7 @@ public class Sadum1Activity extends AppCompatActivity{
         ShowUcapanBtn = findViewById(R.id.btnshowucapan);
         textUcapan = findViewById(R.id.txt_ucapan);
         containerCenter = findViewById(R.id.containerCenter);
+
         img1 = findViewById(R.id.imageView1);
         img2 = findViewById(R.id.imageView2);
         img3 = findViewById(R.id.imageView3);
@@ -386,6 +385,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img8 = findViewById(R.id.imageView8);
         img9 = findViewById(R.id.imageView9);
         img10 = findViewById(R.id.imageView10);
+
         img11 = findViewById(R.id.imageView11);
         img12 = findViewById(R.id.imageView12);
         img13 = findViewById(R.id.imageView13);
@@ -406,6 +406,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img28 = findViewById(R.id.imageView28);
         img29 = findViewById(R.id.imageView29);
         img30 = findViewById(R.id.imageView30);
+
         img31 = findViewById(R.id.imageView31);
         img32 = findViewById(R.id.imageView32);
         img33 = findViewById(R.id.imageView33);
@@ -416,6 +417,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img38 = findViewById(R.id.imageView38);
         img39 = findViewById(R.id.imageView39);
         img40 = findViewById(R.id.imageView40);
+
         img41 = findViewById(R.id.imageView41);
         img42 = findViewById(R.id.imageView42);
         img43 = findViewById(R.id.imageView43);
@@ -426,6 +428,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img48 = findViewById(R.id.imageView48);
         img49 = findViewById(R.id.imageView49);
         img50 = findViewById(R.id.imageView50);
+
         img51 = findViewById(R.id.imageView51);
         img52 = findViewById(R.id.imageView52);
         img53 = findViewById(R.id.imageView53);
@@ -436,6 +439,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img58 = findViewById(R.id.imageView58);
         img59 = findViewById(R.id.imageView59);
         img60 = findViewById(R.id.imageView60);
+
         img61 = findViewById(R.id.imageView61);
         img62 = findViewById(R.id.imageView62);
         img63 = findViewById(R.id.imageView63);
@@ -446,6 +450,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img68 = findViewById(R.id.imageView68);
         img69 = findViewById(R.id.imageView69);
         img70 = findViewById(R.id.imageView70);
+
         img71 = findViewById(R.id.imageView71);
         img72 = findViewById(R.id.imageView72);
         img73 = findViewById(R.id.imageView73);
@@ -456,6 +461,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img78 = findViewById(R.id.imageView78);
         img79 = findViewById(R.id.imageView79);
         img80 = findViewById(R.id.imageView80);
+
         img81 = findViewById(R.id.imageView81);
         img82 = findViewById(R.id.imageView82);
         img83 = findViewById(R.id.imageView83);
@@ -466,6 +472,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img88 = findViewById(R.id.imageView88);
         img89 = findViewById(R.id.imageView89);
         img90 = findViewById(R.id.imageView90);
+
         img91 = findViewById(R.id.imageView91);
         img92 = findViewById(R.id.imageView92);
         img93 = findViewById(R.id.imageView93);
@@ -476,6 +483,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img98 = findViewById(R.id.imageView98);
         img99 = findViewById(R.id.imageView99);
         img100 = findViewById(R.id.imageView100);
+
         img101 = findViewById(R.id.imageView101);
         img102 = findViewById(R.id.imageView102);
         img103 = findViewById(R.id.imageView103);
@@ -486,16 +494,16 @@ public class Sadum1Activity extends AppCompatActivity{
         img108 = findViewById(R.id.imageView108);
         img109 = findViewById(R.id.imageView109);
         img110 = findViewById(R.id.imageView110);
-        img111 = findViewById(R.id.imageView101);
-        img112 = findViewById(R.id.imageView102);
-        img113 = findViewById(R.id.imageView103);
-        img114 = findViewById(R.id.imageView104);
-        img115 = findViewById(R.id.imageView105);
-        img116 = findViewById(R.id.imageView106);
-        img117 = findViewById(R.id.imageView107);
-        img118 = findViewById(R.id.imageView108);
-        img119 = findViewById(R.id.imageView109);
-        img120 = findViewById(R.id.imageView110);
+        img111 = findViewById(R.id.imageView111);
+        img112 = findViewById(R.id.imageView112);
+        img113 = findViewById(R.id.imageView113);
+        img114 = findViewById(R.id.imageView114);
+        img115 = findViewById(R.id.imageView115);
+        img116 = findViewById(R.id.imageView116);
+        img117 = findViewById(R.id.imageView117);
+        img118 = findViewById(R.id.imageView118);
+        img119 = findViewById(R.id.imageView119);
+        img120 = findViewById(R.id.imageView120);
         img121 = findViewById(R.id.imageView121);
         img122 = findViewById(R.id.imageView122);
         img123 = findViewById(R.id.imageView123);
@@ -556,7 +564,6 @@ public class Sadum1Activity extends AppCompatActivity{
 
                     try {
                         bitmapMaster = BitmapFactory.decodeStream(getContentResolver().openInputStream(source));
-
 
                         // Reset HSV value
                         hueBar.setVisibility(View.VISIBLE);
@@ -726,6 +733,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img8.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img8.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img9.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img9.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img10.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img10.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img11.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img11.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img12.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img12.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img13.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img13.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -736,6 +744,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img18.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img18.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img19.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img19.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img20.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img20.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img21.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img21.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img22.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img22.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img23.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img23.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -746,6 +755,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img28.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img28.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img29.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img29.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img30.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img30.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img31.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img31.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img32.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img32.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img33.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img33.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -756,6 +766,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img38.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img38.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img39.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img39.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img40.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img40.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img41.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img41.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img42.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img42.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img43.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img43.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -766,6 +777,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img48.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img48.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img49.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img49.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img50.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img50.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img51.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img51.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img52.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img52.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img53.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img53.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -776,6 +788,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img58.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img58.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img59.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img59.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img60.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img60.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img61.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img61.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img62.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img62.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img63.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img63.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -786,6 +799,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img68.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img68.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img69.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img69.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img70.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img70.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img71.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img71.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img72.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img72.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img73.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img73.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -796,6 +810,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img78.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img78.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img79.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img79.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img80.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img80.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img81.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img81.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img82.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img82.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img83.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img83.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -806,6 +821,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img88.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img88.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img89.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img89.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img90.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img90.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img91.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img91.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img92.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img92.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img93.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img93.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -816,6 +832,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img98.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img98.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img99.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img99.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img100.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img100.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img101.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img101.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img102.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img102.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img103.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img103.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -826,6 +843,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img108.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img108.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img109.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img109.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img110.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img110.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img111.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img111.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img112.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img112.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img113.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img113.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -836,6 +854,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img118.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img118.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img119.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img119.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img120.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img120.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img121.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img121.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img122.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img122.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img123.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img123.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -846,6 +865,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img128.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img128.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img129.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img129.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img130.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img130.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img131.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img131.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img132.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img132.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img133.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img133.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -856,6 +876,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img138.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img138.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img139.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img139.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img140.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img140.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img141.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img141.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img142.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img142.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img143.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img143.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -866,6 +887,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img148.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img148.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img149.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img149.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img150.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img150.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img151.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img151.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img152.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img152.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img153.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img153.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -876,6 +898,7 @@ public class Sadum1Activity extends AppCompatActivity{
         img158.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img158.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img159.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img159.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img160.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img160.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
+
         img161.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img161.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img162.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img162.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
         img163.setOnTouchListener(new Sadum1Activity.ChoiceTouchListener());img163.setOnDragListener(new Sadum1Activity.ChoiceDragListener());
@@ -899,7 +922,7 @@ public class Sadum1Activity extends AppCompatActivity{
             } else {
                 // Disinilah event change color muncul.
                 //Toast.makeText(SadumActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                return false;
             }
         }
     }
@@ -914,14 +937,14 @@ public class Sadum1Activity extends AppCompatActivity{
                 case DragEvent.ACTION_DRAG_STARTED:
 
                     //Saat gambar di drag
-                    SelectMotifbtn.setVisibility(View.GONE);
+                    SelectMotifbtn.setVisibility(View.INVISIBLE);
 //                    hueBar.setVisibility(View.GONE);
-                    findViewById(R.id.iv_image2).setVisibility(View.GONE);
-                    findViewById(R.id.topbtn).setVisibility(View.GONE);
-                    findViewById(R.id.bgColorCenter).setVisibility(View.GONE);
-                    findViewById(R.id.bgColor).setVisibility(View.GONE);
-                    findViewById(R.id.btnshowucapan).setVisibility(View.GONE);
-                    findViewById(R.id.seekcontainer).setVisibility(View.GONE);
+                    findViewById(R.id.iv_image2).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.topbtn).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.bgColorCenter).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.bgColor).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.btnshowucapan).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.seekcontainer).setVisibility(View.INVISIBLE);
                     garbage.setVisibility(View.VISIBLE);
 
                     break;
@@ -934,31 +957,29 @@ public class Sadum1Activity extends AppCompatActivity{
 
                     if(view == garbage){
                         ((ImageView)v).setImageDrawable(null);
-                        findViewById(R.id.seekcontainer).setVisibility(View.GONE);
+                        findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                     }
                     else {
                         ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        ((ImageView)view).setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);
                     }
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
-                    final View dropIgView = (View) dragEvent.getLocalState();
-                    dropIgView.post(new Runnable() {
+                    view.post(new Runnable() {
                         @Override
                         public void run() {
-                            ImageView v = (ImageView) dragEvent.getLocalState();
                             findViewById(R.id.iv_image2).setVisibility(View.VISIBLE);
                             SelectMotifbtn.setVisibility(View.VISIBLE);
                             findViewById(R.id.topbtn).setVisibility(View.VISIBLE);
                             findViewById(R.id.bgColorCenter).setVisibility(View.VISIBLE);
                             findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
                             findViewById(R.id.btnshowucapan).setVisibility(View.VISIBLE);
-                            garbage.setVisibility(View.GONE);
+                            garbage.setVisibility(View.INVISIBLE);
                             hideSystemUI();
                         }
                     });
-                    hideSystemUI();
                     break;
             }
             return true;

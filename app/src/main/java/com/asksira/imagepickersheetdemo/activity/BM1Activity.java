@@ -420,14 +420,14 @@ public class BM1Activity extends AppCompatActivity{
                     }
                     else {
                         ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        ((ImageView)view).setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);
                     }
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
 
-                    final View dropIgView = (View) dragEvent.getLocalState();
-                    dropIgView.post(new Runnable() {
+                    view.post(new Runnable() {
                         @Override
                         public void run() {
                             ImageView v = (ImageView) dragEvent.getLocalState();
@@ -442,7 +442,6 @@ public class BM1Activity extends AppCompatActivity{
                         }
                     });
                     hideSystemUI();
-
                     break;
             }
             return true;
