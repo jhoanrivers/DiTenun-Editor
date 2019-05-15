@@ -715,10 +715,7 @@ public class Sadum1Activity extends AppCompatActivity{
                     });
             AlertDialog alert = builder.create();
             alert.show();
-
-
         }
-
     }
 
     public void touchAndDrag(){

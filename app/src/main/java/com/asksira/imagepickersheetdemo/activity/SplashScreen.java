@@ -1,13 +1,20 @@
 package com.asksira.imagepickersheetdemo.activity;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -19,6 +26,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.asksira.imagepickersheetdemo.R;
 import com.asksira.imagepickersheetdemo.util.PrefManager;
@@ -33,12 +41,18 @@ public class SplashScreen extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
-
+    private int STORAGE_PERMISSION_CODE =1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         hideSystemUI();
+
+        //Request permission
+        if(ContextCompat.checkSelfPermission(SplashScreen.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+
+            requestPermission();
+        }
 
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
@@ -210,9 +224,39 @@ public class SplashScreen extends AppCompatActivity {
 
 
 
+    //Permission
+    private void requestPermission(){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)){
 
+            new AlertDialog.Builder(this ).setTitle("Permission").setMessage("Need to read your storage")
+                    .setPositiveButton("Allow", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(SplashScreen.this,new String[] {
+                                    Manifest.permission.READ_EXTERNAL_STORAGE
+                            },STORAGE_PERMISSION_CODE);
+                        }
+                    })
+                    .create().show();
+        } else {
+            ActivityCompat.requestPermissions(this,new String[] {
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+            },STORAGE_PERMISSION_CODE);
+        }
 
+    }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == STORAGE_PERMISSION_CODE){
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Toast.makeText(this,"Permission allowed",Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this,"Permission denied",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
 
 
