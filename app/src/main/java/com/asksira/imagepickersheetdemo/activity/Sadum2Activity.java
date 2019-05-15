@@ -1003,7 +1003,7 @@ public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchLi
             } else {
                 // Disinilah event change color muncul.
                 //Toast.makeText(SadumActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                return false;
             }
         }
     }
@@ -1058,9 +1058,10 @@ public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchLi
                             findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
                             findViewById(R.id.btnshowucapan).setVisibility(View.VISIBLE);
                             garbage.setVisibility(View.GONE);
+                            hideSystemUI();
                         }
                     });
-                    hideSystemUI();
+
                     break;
             }
             return true;

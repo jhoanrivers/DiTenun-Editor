@@ -439,9 +439,10 @@ public class BM1Activity extends AppCompatActivity{
                             ivImage2.setVisibility(View.VISIBLE);
                             garbageimg.setVisibility(View.GONE);
                             findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
+                            hideSystemUI();
                         }
                     });
-                    hideSystemUI();
+
                     break;
             }
             return true;
@@ -629,7 +630,7 @@ public class BM1Activity extends AppCompatActivity{
             } else {
                 // Disinilah event change color muncul.
                 //Toast.makeText(SadumActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                return false;
             }
         }
     }

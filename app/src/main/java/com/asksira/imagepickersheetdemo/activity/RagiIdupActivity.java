@@ -475,7 +475,7 @@ public class RagiIdupActivity extends AppCompatActivity {
             } else {
                 // Disinilah event change color muncul.
                 //Toast.makeText(SadumActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                return false;
             }
         }
     }
@@ -527,9 +527,10 @@ public class RagiIdupActivity extends AppCompatActivity {
                             findViewById(R.id.bgColor).setVisibility(View.VISIBLE);
                             findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                             garbage.setVisibility(View.GONE);
+                            hideSystemUI();
                         }
                     });
-                    hideSystemUI();
+
                     break;
             }
             return true;
