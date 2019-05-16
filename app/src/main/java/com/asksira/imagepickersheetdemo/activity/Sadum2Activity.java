@@ -1040,7 +1040,7 @@ public class Sadum2Activity extends AppCompatActivity implements  View.OnTouchLi
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                     }
                     else {
-                        ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        ((ImageView) view).setImageDrawable(v.getDrawable());
                         ((ImageView)view).setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);

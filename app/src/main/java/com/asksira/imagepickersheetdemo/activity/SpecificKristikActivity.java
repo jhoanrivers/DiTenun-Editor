@@ -52,12 +52,12 @@ public class SpecificKristikActivity extends AppCompatActivity {
         imageview.setImageBitmap(bmp);
 
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.spesific_image_menu, menu);
-        return true;
-    }
+//
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.spesific_image_menu, menu);
+//        return true;
+//    }
 
 
     @Override

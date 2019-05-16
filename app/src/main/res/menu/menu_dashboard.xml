@@ -7,6 +7,7 @@
         android:id="@+id/action_help"
         android:orderInCategory="100"
         android:title="Help"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_help"/>
 
 </menu>

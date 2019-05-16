@@ -11,6 +11,7 @@ import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -33,22 +35,12 @@ import com.asksira.imagepickersheetdemo.R;
 import com.asksira.imagepickersheetdemo.adapter.CustomListAdapter;
 import com.asksira.imagepickersheetdemo.adapter.ViewPagerAdapter;
 import com.asksira.imagepickersheetdemo.fragment.DisimpanFragment;
+import com.asksira.imagepickersheetdemo.fragment.FragmentCustomSize;
+import com.asksira.imagepickersheetdemo.fragment.HelpFragment;
 import com.asksira.imagepickersheetdemo.fragment.KristikFragment;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
 
     GridView gridViewImage;
     private TabLayout tabLayout;
@@ -63,10 +55,13 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
 
-
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         viewPager = findViewById(R.id.viewpager);
+
+        toolbar.setTitle(R.string.app_name);
+        setSupportActionBar(toolbar);
 
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -144,7 +139,11 @@ public class DashboardActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.action_help){
-            Toast.makeText(this,"Santai aja dong",Toast.LENGTH_SHORT).show();
+            FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
+            fts.add(R.id.containerhelp, new HelpFragment());
+            btnstatus = true;
+            fts.addToBackStack("optional tag");
+            fts.commit();
         }
         return super.onOptionsItemSelected(item);
 
@@ -158,12 +157,9 @@ public class DashboardActivity extends AppCompatActivity {
         if (fragmentManager.getBackStackEntryCount() > 0 ) {
             fragmentManager.popBackStack();
 
-            if(btnstatus){
-                findViewById(R.id.layoutsize).setVisibility(View.GONE);
-            }
-            else{
-                findViewById(R.id.layoutsize).setVisibility(View.VISIBLE);
-            }
+        }
+        else{
+            super.onBackPressed();
         }
 
     }

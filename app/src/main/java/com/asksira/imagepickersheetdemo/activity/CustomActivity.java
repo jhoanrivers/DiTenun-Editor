@@ -385,13 +385,6 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
         sendBroadcast(intent);
     }
 
-    // Convert seluruh gambar ke bitmap
-    public static Bitmap viewToBitmap(View view, int width, int height){
-        Bitmap bitmap = Bitmap.createBitmap(width,height,Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        view.draw(canvas);
-        return bitmap;
-    }
 
 
     private void initial() {

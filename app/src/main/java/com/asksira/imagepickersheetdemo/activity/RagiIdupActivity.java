@@ -402,7 +402,6 @@ public class RagiIdupActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         if (fragmentManager.getBackStackEntryCount() > 0 ) {
             fragmentManager.popBackStack();
-
         }
         else
         {
@@ -422,8 +421,6 @@ public class RagiIdupActivity extends AppCompatActivity {
                     });
             AlertDialog alert = builder.create();
             alert.show();
-
-
         }
 
     }
@@ -496,7 +493,6 @@ public class RagiIdupActivity extends AppCompatActivity {
                     findViewById(R.id.bgColor).setVisibility(View.GONE);
                     findViewById(R.id.seekcontainer).setVisibility(View.GONE);
                     garbage.setVisibility(View.VISIBLE);
-
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
                     break;
@@ -504,7 +500,6 @@ public class RagiIdupActivity extends AppCompatActivity {
                     break;
                 case DragEvent.ACTION_DROP:
                     ImageView v = (ImageView) dragEvent.getLocalState();
-
                     if(view == garbage){
                         ((ImageView)v).setImageDrawable(null);
                         findViewById(R.id.seekcontainer).setVisibility(View.GONE);
@@ -530,7 +525,6 @@ public class RagiIdupActivity extends AppCompatActivity {
                             hideSystemUI();
                         }
                     });
-
                     break;
             }
             return true;

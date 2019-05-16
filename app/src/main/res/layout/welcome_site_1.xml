@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_screen1"
+    android:background="@color/bg_screen2"
     android:padding="20dp">
 
 
@@ -16,16 +16,15 @@
         <ImageView
             android:layout_width="@dimen/img_width_height"
             android:layout_height="@dimen/img_width_height"
-            android:src="@drawable/logo_de"/>
+            android:src="@drawable/logoditenun"/>
 
         <TextView
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:text="Selamat Datang di Aplikasi DiTenun Editor"
+            android:text="Powered by DiTenun"
             android:textColor="@android:color/white"
             android:textAlignment="center"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textSize="24dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,7 +32,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
-            android:text="Ini adalah aplikasi yang menyediakan template ulos, sehingga pengguna dapat melakukan desain ulos baru dengan variasi motif baru"
+            android:text="Pembangunan Modul DiTenun Editor pada Aplikasi DiTenun"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="@dimen/slide_desc" />

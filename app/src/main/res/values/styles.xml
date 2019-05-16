@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/darkRed</item>
-        <item name="colorPrimaryDark">@color/colordarkRed</item>
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryDark">@color/purple</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -28,8 +28,8 @@
     </style>
 
     <style name="MainMenu" parent="AppTheme.NoActionBar">
-        <item name="colorPrimary">@color/darkRed</item>
-        <item name="colorPrimaryDark">@color/colordarkRed</item>
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryDark">@color/purple</item>
         <item name="android:textColorSecondary">@color/white</item>
     </style>
 

@@ -4,13 +4,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.HelpFragment"
-    android:padding="20dp">
+    android:background="@color/light_blue_500">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dengan menekan tombol yang berada di sebelah kiri, maka akan muncul list template yang akan dipilih untuk mendesain ulos baru"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:src="@drawable/choosetemplate"
+                />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Anda dapat memilih template yang anda inginkan, termasuk custom, dimana pengguna dapat mendesain ulos buatannya sendiri"/>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:src="@drawable/sadumtemplatetutorial"
+                />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Anda dapat memilih, menyimpan, mengubah warna sisi, mengubagh warna tengah template ulos sesuai dengan keinginan anda"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                />
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:src ="@drawable/tutorial_drag"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Anda dapat menggeser dan menyusun motif ke grid-grid yang telah disediakan pada template untuk memudahkan dalam proses desain ulos"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="end"
+                android:text="Terima kasih."
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
 
     </ScrollView>
 

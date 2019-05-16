@@ -204,7 +204,7 @@
         <RelativeLayout
             android:id="@+id/motiftengah"
             android:layout_width="200dp"
-            android:layout_height="370dp"
+            android:layout_height="380dp"
             android:layout_below="@+id/motifkepala"
             android:layout_centerHorizontal="true">
 

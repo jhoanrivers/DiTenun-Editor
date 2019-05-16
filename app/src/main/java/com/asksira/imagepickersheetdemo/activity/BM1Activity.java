@@ -419,7 +419,7 @@ public class BM1Activity extends AppCompatActivity{
                         findViewById(R.id.seekcontainer).setVisibility(View.GONE);
                     }
                     else {
-                        ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        ((ImageView) view).setImageDrawable(v.getDrawable());
                         ((ImageView)view).setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);

@@ -14,14 +14,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dengan menekan tombol yang berada di sebelah kiri, maka akan muncul list template yang akan dipilih untuk mendesain ulos baru"
+            android:text="Dengan menekan tombol yang berada di sebelah kanan bawah, maka akan muncul daftar template yang dapat dipilih untuk mendesain ulos baru"
             android:textSize="18dp"
             android:textColor="@color/white"/>
 
         <ImageView
             android:layout_marginTop="10dp"
-            android:layout_width="200dp"
-            android:layout_height="240dp"
+            android:layout_width="300dp"
+            android:layout_height="440dp"
             android:layout_gravity="center"
             android:src="@drawable/choosetemplate"
             />
@@ -32,7 +32,7 @@
             android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Anda dapat memilih template yang anda inginkan, termasuk custom, dimana pengguna dapat mendesain ulos buatannya sendiri"/>
+            android:text="Anda dapat memilih template Sadum, Bintang Maratur, Ragi Idup, Mangiring, dan Custom."/>
     </LinearLayout>
 
 

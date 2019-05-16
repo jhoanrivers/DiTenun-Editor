@@ -368,7 +368,7 @@ public class MangiringActivity extends AppCompatActivity {
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                     }
                     else {
-                        ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        ((ImageView) view).setImageDrawable(v.getDrawable());
                         ((ImageView)view).setScaleType(ImageView.ScaleType.CENTER_CROP);
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);

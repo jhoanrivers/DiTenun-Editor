@@ -234,7 +234,7 @@ public class SpecificSingleImage extends AppCompatActivity {
 
     private void generateKristik() {
         int kristikSize = 1;
-        int colorSize = 100;
+        int colorSize = 20;
         requestKristikFromServer(kristikSize, colorSize, motifBytes);
         showLoading();
     }

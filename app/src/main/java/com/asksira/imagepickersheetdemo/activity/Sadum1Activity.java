@@ -111,14 +111,12 @@ public class Sadum1Activity extends AppCompatActivity{
                 relativeimages.setBackgroundResource(R.color.blueberry);
             }
         });
-
         findViewById(R.id.btnYellow).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 relativeimages.setBackgroundResource(R.color.yellow);
             }
         });
-
         findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +125,6 @@ public class Sadum1Activity extends AppCompatActivity{
         });
 
         //container center background color
-
         findViewById(R.id.btnDarkRedCenter).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,20 +149,58 @@ public class Sadum1Activity extends AppCompatActivity{
                 findViewById(R.id.containerCenter).setBackgroundResource(R.color.blueberry);
             }
         });
-
         findViewById(R.id.btnYellowCenter).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 findViewById(R.id.containerCenter).setBackgroundResource(R.color.yellow);
             }
         });
-
         findViewById(R.id.btnBlackCenter).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 findViewById(R.id.containerCenter).setBackgroundResource(R.color.black);
             }
         });
+
+        //kata ucapan color
+        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textUcapan.setBackgroundResource(R.color.darkRed);
+            }
+        });
+        findViewById(R.id.btnCalmRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textUcapan.setBackgroundResource(R.color.calmRed);
+            }
+        });
+        findViewById(R.id.btnGreen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textUcapan.setBackgroundResource(R.color.green);
+            }
+        });
+        findViewById(R.id.btnBlue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textUcapan.setBackgroundResource(R.color.blueberry);
+            }
+        });
+        findViewById(R.id.btnYellow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textUcapan.setBackgroundResource(R.color.yellow);
+            }
+        });
+        findViewById(R.id.btnBlack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textUcapan.setBackgroundResource(R.color.black);
+            }
+        });
+
+
 
         //end of choose background color
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -177,6 +212,7 @@ public class Sadum1Activity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 ContainerUcapan.setVisibility(View.VISIBLE);
+                ContainerUcapan.setBackgroundResource(R.color.grey);
                 btnstatus= true;
                 edtUcapan.requestFocus();
                 InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -188,6 +224,7 @@ public class Sadum1Activity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 ContainerUcapan.setVisibility(View.VISIBLE);
+                ContainerUcapan.setBackgroundResource(R.color.grey);
                 btnstatus= true;
                 edtUcapan.requestFocus();
                 InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -219,8 +256,6 @@ public class Sadum1Activity extends AppCompatActivity{
                 ContainerUcapan.setVisibility(View.GONE);
             }
         });
-
-
 
         SelectMotifbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -584,9 +619,6 @@ public class Sadum1Activity extends AppCompatActivity{
             }
         }
     }
-
-
-
 
     SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
 
@@ -957,7 +989,7 @@ public class Sadum1Activity extends AppCompatActivity{
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                     }
                     else {
-                        ((ImageView) view).setImageDrawable(ivImage2.getDrawable());
+                        ((ImageView) view).setImageDrawable(v.getDrawable());
                         ((ImageView)view).setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                         findViewById(R.id.seekcontainer).setVisibility(View.VISIBLE);
                         //((ImageView)v).setImageDrawable(null);
