@@ -1663,6 +1663,7 @@
 
     </RelativeLayout>
 
+    <!--DUSTBIN-->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -1760,6 +1761,65 @@
     </RelativeLayout>
 
     <ScrollView
+        android:id="@+id/bgColortext"
+        android:layout_width="40dp"
+        android:layout_height="400dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/style_dialog"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnCalmRedtext"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/color_palete_calmred" />
+
+            <Button
+                android:id="@+id/btnDarkRedtext"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_darkred" />
+
+            <Button
+                android:id="@+id/btnGreentext"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_green" />
+
+            <Button
+                android:id="@+id/btnBluetext"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_blue" />
+
+
+            <Button
+                android:id="@+id/btnYellowtext"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_yellow" />
+
+            <Button
+                android:id="@+id/btnBlacktext"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_palete_black" />
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView
         android:id="@+id/bgColorCenter"
         android:layout_width="40dp"
         android:layout_height="150dp"
@@ -1819,7 +1879,6 @@
 
         </LinearLayout>
     </ScrollView>
-
     <ScrollView
         android:id="@+id/bgColor"
         android:layout_width="40dp"
@@ -1882,10 +1941,9 @@
         </LinearLayout>
     </ScrollView>
 
-
     <RelativeLayout
         android:id="@+id/edtucapancontainer"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
@@ -1895,21 +1953,12 @@
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="5"
+            android:ems="10"
             android:textAllCaps="true"
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textStyle="bold"
             android:textColor="@color/white"
-            />
-        <Button
-            android:id="@+id/btn_ucapan"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/edt_ucapan"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set"
             />
     </RelativeLayout>
 
@@ -1968,8 +2017,8 @@
 
     <ImageView
         android:id="@+id/iv_image2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
