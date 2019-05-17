@@ -217,6 +217,7 @@ public class Sadum1Activity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 ContainerUcapan.setVisibility(View.VISIBLE);
+                ContainerUcapan.setBackgroundResource(R.color.white        );
                 findViewById(R.id.bgColortext).setVisibility(View.VISIBLE);
                 findViewById(R.id.bgColorCenter).setVisibility(GONE);
                 findViewById(R.id.bgColor).setVisibility(GONE);
@@ -264,7 +265,6 @@ public class Sadum1Activity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 ContainerUcapan.setVisibility(View.VISIBLE);
-                ContainerUcapan.setBackgroundResource(R.color.grey);
                 findViewById(R.id.bgColortext).setVisibility(View.VISIBLE);
                 findViewById(R.id.bgColorCenter).setVisibility(GONE);
                 findViewById(R.id.bgColor).setVisibility(GONE);

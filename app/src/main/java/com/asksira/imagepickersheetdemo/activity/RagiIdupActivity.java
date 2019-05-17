@@ -66,7 +66,7 @@ public class RagiIdupActivity extends AppCompatActivity {
 
         findViewById(R.id.garbage_imgview).setVisibility(View.GONE);
         //Chooose color for Background
-        findViewById(R.id.btnDarkRed).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btnpurple).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 relativeimages.setBackgroundResource(R.color.purple);

@@ -23,13 +23,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/image" />
 
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-
         <Button
             android:id="@+id/btnsavekristik"
             android:layout_width="50dp"

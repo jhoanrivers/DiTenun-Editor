@@ -445,7 +445,8 @@ public class CustomActivity extends AppCompatActivity implements View.OnTouchLis
 
         containerTemplateCenter.getLayoutParams().height =  hh * 5;
         containerTemplateCenter.getLayoutParams().width = ww * 5;
-        containerTemplateCenter.setBackgroundResource(R.color.white);
+        containerTemplateCenter.setBackgroundResource(R.color.black);
+
 
         RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) containerTemplate.getLayoutParams();
         RelativeLayout.LayoutParams lpt = (RelativeLayout.LayoutParams) containerTemplateCenter.getLayoutParams();

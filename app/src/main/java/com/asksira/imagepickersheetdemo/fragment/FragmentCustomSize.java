@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.asksira.imagepickersheetdemo.R;
 
@@ -46,12 +47,30 @@ public class FragmentCustomSize extends Fragment {
                 String ht = tinggictr.getText().toString();
                 String wt = lebarctr.getText().toString();
 
+                int hhs = Integer.parseInt(hs);
+                int hht = Integer.parseInt(ht);
+                int wws = Integer.parseInt(ws);
+                int wwt = Integer.parseInt(wt);
+
+                if(hhs < hht){
+                    tinggictr.setError("Too long");
+                    Toast.makeText(getActivity(), "Panjang tengah tidak melebihi panjang template", Toast.LENGTH_SHORT).show();
+                }
+                if(wws < wwt){
+                    tinggictr.setError("Too long");
+                    Toast.makeText(getActivity(), "Lebar tengah tidak melebihi panjang template", Toast.LENGTH_SHORT).show();
+                }
+
+
                 if (TextUtils.isEmpty(heightsisi.getText()) && TextUtils.isEmpty(widthsisi.getText()) && TextUtils.isEmpty(lebarctr.getText()) && TextUtils.isEmpty(tinggictr.getText())) {
                     heightsisi.setError("Required");
                     widthsisi.setError("Required");
                     tinggictr.setError("Required");
                     lebarctr.setError("Required");
-
+                }
+                if( TextUtils.isEmpty(lebarctr.getText()) && TextUtils.isEmpty(tinggictr.getText())){
+                    tinggictr.setError("Required");
+                    lebarctr.setError("Required");
                 }
                 else {
                     CustomActivity rg = (CustomActivity) getActivity();
