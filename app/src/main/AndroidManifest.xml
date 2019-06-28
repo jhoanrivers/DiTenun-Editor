@@ -71,19 +71,10 @@
             android:name=".activity.Sadum2Activity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.Sadum3Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.Sadum4Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".activity.BM2Activity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.BM3Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.Sadum5Activity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.RagiIdupActivity"

@@ -78,10 +78,8 @@ public class DashboardActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final AlertDialog.Builder builder = new AlertDialog.Builder(DashboardActivity.this);
                 builder.setTitle("Pilih jenis template");
-
                 LayoutInflater inflater = (LayoutInflater) DashboardActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View row = inflater.inflate(R.layout.row_item_template,null);
                 final ListView li = (ListView)row.findViewById(R.id.list_row_item);

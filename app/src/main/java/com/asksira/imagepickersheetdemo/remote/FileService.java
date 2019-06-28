@@ -9,9 +9,6 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 
 public interface FileService {
-
-
-
     @Multipart
     @POST("kristik")
     Call<Kristik> kristik(@Part MultipartBody.Part file);

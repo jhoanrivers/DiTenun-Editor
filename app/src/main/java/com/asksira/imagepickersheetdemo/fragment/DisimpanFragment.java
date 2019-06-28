@@ -92,8 +92,7 @@ public class DisimpanFragment extends Fragment {
 
         }
 
-            if(file.isDirectory()){
-            }
+
         return view;
     }
 
